@@ -1,129 +1,93 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
   <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="shortcut icon" href="assets/ico/favicon.ico">
-
-    <title>VideoClub</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   
+    <title>Peliculas</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    
 
     <!-- Custom styles for this template -->
-    <link href="assets/css/style.css" rel="stylesheet">
-    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+   
+    <link href="assets/css/2-col-portfolio.css" rel="stylesheet">
 
+    <!-- *****   codigo Java   ****   -->
+      
+      
+       <link href="assets/css/bootstrap.css" rel="stylesheet">
 
-    <!-- Just for debugging purposes. Don't actually copy this line! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <!-- **************************   -->
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    
-    <script src="assets/js/modernizr.js"></script>
   </head>
 
   <body>
 
-    <!-- Fixed navbar -->
-    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="index.html">VideoClub</a>
-        </div>
-        <div class="navbar-collapse collapse navbar-right">
-
-        </div><!--/.nav-collapse -->
+        <a class="navbar-brand" href="#">Peliculas</a>
       </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+      <!-- Page Heading -->
+      <h1 class="my-4">UCEL
+        <small>Programación Avanzada</small>
+      </h1>
+
+      <div class="row">
+        <div class="col-lg-6 portfolio-item">
+          <div class="card h-100">
+            
+            <div class="card-body">
+              <h4  class="card-title">
+                <div class="p-3 mb-2 bg-success text-white">Login</div>
+              </h4>
+             <form action="LoginServlet" name=formulario method="POST">
+            
+            <label>User : </label> <input type="text" name=txtNombre />
+            <br></br>
+            <label>Pass : </label> <input type="password" name="txtPassword" />
+            <br></br>
+            <input type="submit" name="btnEnviar" value=Enviar />
+            <a class="btn btn-info" href="nuevoUsuario.jsp">Registrarse</a>
+            <input class="btn btn-basic" type="submit" name="btnEnviar" value=Invitado />
+            
+            </form>
+            <p style="color:red"> 
+              <%= request.getAttribute("mensaje") != null ? request.getAttribute("mensaje") : "" %>
+             </p>
+            </div>
+          </div>
+        </div>
+       
+   
+      <!-- /.row -->
+
+      <!-- Pagination -->
+
+
     </div>
+    <!-- /.container -->
 
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Alumno: Nicolás Dalmás &copy;  2018</p>
+      </div>
+      <!-- /.container -->
+    </footer>
 
-	<!-- *****************************************************************************************************************
-	 BLUE WRAP
-	 ***************************************************************************************************************** -->
-	<div id="blue">
-	    <div class="container">
-			<div class="row">
-				<h3>Login</h3>
-			</div><!-- /row -->
-	    </div> <!-- /container -->
-	</div><!-- /blue -->
-
-	<!-- *****************************************************************************************************************
-	 TITLE & CONTENT
-	 ***************************************************************************************************************** -->
-
-	 <div class="container mt">
-	 	<div class="row">
-		 	<div class="col-lg-10 col-lg-offset-1 centered">
-			 	<div Id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-				<!-- CODIGO -->
-				
-						<form action="LoginServlet" name=formulario method="POST">
-						
-						<label>Nombre : </label> <input type="text" name=txtNombre />
-						<br></br>
-						<label>ContraseÃ±a : </label> <input type="password" name="txtPassword" />
-						<br></br>
-						<input type="submit" name="btnEnviar" value=enviar />
-						
-						</br>
-						<a href="nuevoUsuario.jsp">Registrarse</a>
-						</br>
-						<input type="submit" name="btnEnviar" value=invitado />
-						
-						</form>
-						<p style="color:red"> 
-						  <%= request.getAttribute("mensaje") != null ? request.getAttribute("mensaje") : "" %>
-						 </p>
-				
-				<!-- FIN CODIGO -->
-				
-				</div><! --/Carousel -->
-		 	</div>
-		 	
-
-		 	
-
-		 	
-	 	</div><! --/row -->
-	 </div><! --/container -->
-	 
-
-
-	<!-- *****************************************************************************************************************
-	 FOOTER
-	 ***************************************************************************************************************** -->
-	 <div id="footerwrap">
-	 	<div class="container">
-		 	<div class="row">
-		 		<div class="col-lg-4">
-		 			<h4>Facundo Diaz</h4>
-		 		</div>
-
-		 	
-		 	</div><! --/row -->
-	 	</div><! --/container -->
-	 </div><! --/footerwrap -->
-	 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
 	<script src="assets/js/retina-1.1.0.js"></script>
 	<script src="assets/js/jquery.hoverdir.js"></script>
@@ -215,5 +179,12 @@
 	});
 })(jQuery);
 </script>
+
+    
+
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
   </body>
+
 </html>
