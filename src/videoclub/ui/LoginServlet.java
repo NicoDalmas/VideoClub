@@ -87,7 +87,7 @@ public class LoginServlet extends HttpServlet {
 				/* FIN IF VOLVER */
 				
 				/* IF LOGIN */
-				if (boton.equals("enviar")) {
+				if (boton.equals("Enviar")) {
 					// fin carga driver
 					// crear coneccion
 
@@ -195,7 +195,7 @@ public class LoginServlet extends HttpServlet {
 				}
 				/* FIN IF VOLVER */
 				/* IF INVITADO */
-				if (boton.equals("invitado")) {
+				if (boton.equals("Invitado")) {
 
 					Statement st2 = con.createStatement();
 
@@ -241,7 +241,7 @@ public class LoginServlet extends HttpServlet {
 				}
 				/* FIN IF VER RESERVAS */
 				/* IF NUEVO USUARIO */
-				else if (boton.equals("nvoUsu")) {
+				else if (boton.equals("NuevoUsuario")) {
 					// fin carga driver
 					// crear coneccion
 					// fin coneccion

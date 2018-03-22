@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="assets/ico/favicon.ico">
 
-    <title>VideoClub</title>
+    <title>Peliculas</title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -28,7 +28,7 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     
-    <script src="assets/js/modernizr.js"></script>
+    
   </head>
 
   <body>
@@ -104,7 +104,7 @@
 								  <%= request.getAttribute("mensaje") != null ? request.getAttribute("mensaje") : "" %>
 								 </p>		
 								
-								<input type="submit" name="btnEnviar" value=nvoUsu />
+								<input type="submit" name="btnEnviar" value=NuevoUsuario />
 								<br></br>
 								<a href="index.jsp">Salir</a>
 								</br>
