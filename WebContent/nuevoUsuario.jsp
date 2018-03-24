@@ -26,13 +26,8 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#">Peliculas</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          
-        </div>
+        <a class="navbar-brand" href="index.jsp">Peliculas</a>
+ 
       </div>
     </nav>
 
@@ -84,10 +79,11 @@
                   <%= request.getAttribute("mensaje") != null ? request.getAttribute("mensaje") : "" %>
                  </p>   
                 
-                <input type="submit" name="btnEnviar" value=NuevoUsuario />
-                <br></br>
-                <a href="index.jsp">Salir</a>
-                </br>
+                <input class="btn btn-success" type="submit" name="btnEnviar" value=NuevoUsuario />
+           		<a href="index.jsp">
+                <input type="button" class="btn btn-default" value=Salir />
+                </a>
+              
 
                 
                 </form></p>

@@ -53,9 +53,9 @@
               </h4>
              <form action="LoginServlet" name=formulario method="POST">
             <br>
-            <label>User : </label> <input type="text" name=txtNombre />
+            <label class="label label-default">User : </label> <input class="form-control" type="text" name=txtNombre />
             <br></br>
-            <label>Pass : </label> <input type="password" name="txtPassword" />
+            <label class="label label-default">Pass : </label> <input class="form-control" type="password" name="txtPassword" />
             <br></br>
             <input class="btn btn-success" type="submit" name="btnEnviar" value=Enviar />
             <a class="btn btn-info" href="nuevoUsuario.jsp">Registrarse</a>

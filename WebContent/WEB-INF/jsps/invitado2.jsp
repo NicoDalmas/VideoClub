@@ -1,4 +1,5 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1" import="java.util.List, videoclub.ui.Pelicula"%>
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -9,7 +10,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="assets/ico/favicon.ico">
 
-    <title>Peliculas</title>
+    <title>VideoClub</title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -19,26 +20,31 @@
     <link href="assets/css/font-awesome.min.css" rel="stylesheet">
 
 
-    <!-- Just for debugging purposes. Don't actually copy this line! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
     
-    
+    <script src="assets/js/modernizr.js"></script>
   </head>
 
   <body>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container">
-        <a class="navbar-brand" href="#">Peliculas</a>
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">VideoClub</a>
+        </div>
+        <div class="navbar-collapse collapse navbar-right">
+
+        </div><!--/.nav-collapse -->
       </div>
-    </nav>
+    </div>
+
 
 	<!-- *****************************************************************************************************************
 	 BLUE WRAP
@@ -46,7 +52,7 @@
 	<div id="blue">
 	    <div class="container">
 			<div class="row">
-				<h3>Nuevo Usuario</h3>
+				<h3>Bienvenido</h3>
 			</div><!-- /row -->
 	    </div> <!-- /container -->
 	</div><!-- /blue -->
@@ -61,44 +67,59 @@
 			 	<div Id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 				<!-- CODIGO -->
 				
-						<form action="LoginServlet" name=formulario method="POST">
-								<table>	
-									<tr>
-										<td><label>Nombre de Usuario : </label></td>
-										<td><input type="text" name=txtNombreUsu /></td>
-									</tr>
-									<tr>
-										<td><label>Contraseña : </label></td>
-										<td><input type="password" name="txtPassword" /></td>
-									</tr>	
-									<tr>
-										<td><label>Confirmar Contraseña : </label></td>
-										<td><input type="password" name="txtPassword2" /></td>
-									</tr>		 
-									<tr>
-										<td><label>Nombre : </label></td>
-										<td> <input type="text" name="txtNombre" /></td>
-									</tr>	
-									<tr>
-										<td><label>Telefono: </label></td>
-										<td> <input type="text" name="txtTelefono" /></td>
-									</tr>			 
-									<tr>
-										<td><label>Direccion: </label></td>
-										<td> <input type="text" name="txtDireccion" /></td>
-									</tr>	
-								 </table>
-								<p style="color:red"> 
-								  <%= request.getAttribute("mensaje") != null ? request.getAttribute("mensaje") : "" %>
-								 </p>		
-								
-								<input type="submit" name="btnEnviar" value=NuevoUsuario />
-								<br></br>
-								<a href="index.jsp">Salir</a>
-								</br>
-
-								
-								</form>
+						<p> Bienvenido Invitado </p>
+						 <form action="LoginServlet" name=formulario method="POST">
+						 
+						 
+						 
+						 <center><h1>Listado de Peliculas</h1></center>
+											<style>
+												.demo {
+													border:1px solid #C0C0C0;
+													border-collapse:collapse;
+													padding:5px;
+												}
+												.demo th {
+													border:1px solid #C0C0C0;
+													padding:5px;
+													background:#F0F0F0;
+												}
+												.demo td {
+													border:1px solid #C0C0C0;
+													padding:5px;
+												}
+											</style>
+											<table class="demo">
+												<thead>
+												<tr>
+													<th>TITULO</th>
+													<th>IMAGEN</th>
+													<th>GENERO</th>
+													<th>SINOPSIS</th>
+												</tr>
+												</thead>
+												<%
+													Integer contador=0;
+													List<Pelicula> peliculas = (List<Pelicula>) request.getAttribute("peliculas");
+													for(Pelicula p : peliculas) { 
+												%>	
+												<tbody>
+												<tr>
+													<td><%=p.getTitulo() %></td>
+													<td><IMG SRC="img/<%=p.getIdPelicula()%>.jpg" height=300 width=500></img></td>
+													<td><%=p.getGenero()%></td>
+													<td><%=p.getSinopsis() %></td>
+												</tr>
+												<%contador=contador+1;}%>
+												</tbody>
+											</table>
+						<input style="visibility:hidden" type="text" name="txtContador" value=<%out.println(contador);%> />
+						<input style="visibility:hidden" type="text" name="txtIdUsuario" value=<%=request.getAttribute("r_id") %> />
+						<br></br>
+						<br></br>
+						
+						 <br></br>
+						 </form>
 				
 				<!-- FIN CODIGO -->
 				
@@ -122,6 +143,7 @@
 		 	<div class="row">
 		 		<div class="col-lg-4">
 		 			<h4>Facundo Diaz</h4>
+		 			
 		 		</div>
 
 		 	
