@@ -52,12 +52,12 @@
                 <div class="p-3 mb-2 bg-success text-white">Login</div>
               </h4>
              <form action="LoginServlet" name=formulario method="POST">
-            
+            <br>
             <label>User : </label> <input type="text" name=txtNombre />
             <br></br>
             <label>Pass : </label> <input type="password" name="txtPassword" />
             <br></br>
-            <input type="submit" name="btnEnviar" value=Enviar />
+            <input class="btn btn-success" type="submit" name="btnEnviar" value=Enviar />
             <a class="btn btn-info" href="nuevoUsuario.jsp">Registrarse</a>
             <input class="btn btn-basic" type="submit" name="btnEnviar" value=Invitado />
             
