@@ -6,79 +6,102 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="shortcut icon" href="assets/ico/favicon.ico">
-	 <meta charset="utf-8">
-	 
-    <title>Peliculas</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
 
-     <!-- Bootstrap core CSS -->
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
-    
+    <title>VideoClub</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+
     <!-- Custom styles for this template -->
-    <link href="assets/css/2-col-portfolio.css" rel="stylesheet">
-   
+    <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/font-awesome.min.css" rel="stylesheet">
 
 
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="assets/js/modernizr.js"></script>
   </head>
 
   <body>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container">
-        <a class="navbar-brand" href="index.jsp">Peliculas</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="bienvenidoAdmin.jsp">Volver</a>
-            </li>
-            <li class="nav-item">
-             
-            </li>
-            <li class="nav-item">
-              
-            </li>
-          </ul>
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">VideoClub</a>
         </div>
-      </div>
-    </nav>
+        <div class="navbar-collapse collapse navbar-right">
 
-	
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+
+	<!-- *****************************************************************************************************************
+	 BLUE WRAP
+	 ***************************************************************************************************************** -->
+	<div id="blue">
+	    <div class="container">
+			<div class="row">
+				<h3>Listado Reservas</h3>
+			</div><!-- /row -->
+	    </div> <!-- /container -->
+	</div><!-- /blue -->
 
 	<!-- *****************************************************************************************************************
 	 TITLE & CONTENT
 	 ***************************************************************************************************************** -->
- <!-- Page Content -->
-    <div class="container">
-	 
-	 	
+
+	 <div class="container mt">
+	 	<div class="row">
+		 	<div class="col-lg-10 col-lg-offset-1 centered">
+			 	<div Id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+				<!-- CODIGO -->
 				
-			
-				 <div class="p-3 mb-2 bg-success text-white">
-						 <h1 class="my-4">Reservas</h1>
-				</div>		 
+							<p> Admin </p>
 								 <form action="LoginServlet" name=formulario method="POST">
 								 
-								 <center><h1><small></>Listado de Reservas</h1></small></center>
-											<div class="table-responsive">
-  												<table class="table table-hover">
-													<thead>
+								 <center><h1>Listado de Reservas</h1></center>
+											<style>
+												.demo {
+													border:1px solid #C0C0C0;
+													border-collapse:collapse;
+													padding:5px;
+												}
+												.demo th {
+													border:1px solid #C0C0C0;
+													padding:5px;
+													background:#F0F0F0;
+												}
+												.demo td {
+													border:1px solid #C0C0C0;
+													padding:5px;
+												}
+											</style>
+											<table class="demo">
+												<thead>
 												<tr>
 													<th>ID RESERVA</th>
 													<th>PELICULA</th>
 													<th>CLIENTE</th>
 													<th>FECHA RESERVA</th>
-													<th><span class="glyphicon glyphicon-question-sign"></span></th>
+													<th></th>
 												</tr>
 												</thead>
 												<%
@@ -102,23 +125,44 @@
 								 <br></br>
 								 <br></br>
 								 <input style="visibility:hidden" type="text" name="txtNombre" value=<%=request.getParameter("txtNombre")%>  />
-								 <center><input class="btn btn-success" type="submit" id="btnCerrarRes" name="btnEnviar" value=CerrarReservas disabled/></center>
-								 <center><input class="btn" type="submit" name="btnEnviar" value=volver /><center>
+								 <center><input type="submit" id="btnCerrarRes" name="btnEnviar" value=CerrarReservas disabled/></center>
+								 <center><input type="submit" name="btnEnviar" value=volver /><center>
 								 </form>
-				
+								<br></br>
+								<br></br>
 				<!-- FIN CODIGO -->
 				
-			
+				</div><! --/Carousel -->
+		 	</div>
+		 	
+
+		 	
+
+		 	
+	 	</div><! --/row -->
+	 </div><! --/container -->
 	 
 
-    <!-- Footer -->
-    <footer class="py-5 bg-dark">
-      <div class="container">
-        <p class="m-0 text-center text-white">Alumno: Nicolás Dalmás &copy;  2018</p>
-      </div>
-      <!-- /.container -->
-    </footer>
-     <!-- Placed at the end of the document so the pages load faster -->
+
+	<!-- *****************************************************************************************************************
+	 FOOTER
+	 ***************************************************************************************************************** -->
+	 <div id="footerwrap">
+	 	<div class="container">
+		 	<div class="row">
+		 		<div class="col-lg-4">
+		 			<h4>Facundo Diaz</h4>
+		 			
+		 		</div>
+
+		 	
+		 	</div><! --/row -->
+	 	</div><! --/container -->
+	 </div><! --/footerwrap -->
+	 
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
 	<script src="assets/js/retina-1.1.0.js"></script>
@@ -226,9 +270,4 @@
  			}
  		}
  </script>
-    
-
-
-  </body>
-
 </html>
