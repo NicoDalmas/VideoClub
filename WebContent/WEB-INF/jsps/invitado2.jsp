@@ -6,245 +6,145 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+	<link rel="shortcut icon" href="assets/ico/favicon.ico">
+	 <meta charset="utf-8">
+	 
+    <title>Peliculas</title>
 
-    <title>VideoClub</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="assets/css/style.css" rel="stylesheet">
-    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
-
-
-
+     <!-- Bootstrap core CSS -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> 
     
-    <script src="assets/js/modernizr.js"></script>
+    
+    <!-- Custom styles for this template -->
+    <!-- <link href="assets/css/2-col-portfolio.css" rel="stylesheet"> -->
+   
+    <!-- <link href="assets/css/font-awesome.min.css" rel="stylesheet">  -->
+
+
   </head>
 
   <body>
 
-    <!-- Fixed navbar -->
-    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="index.html">VideoClub</a>
+        <a class="navbar-brand" href="index.jsp">Peliculas</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.jsp">Volver</a>
+            </li>
+            <li class="nav-item">
+             
+            </li>
+            <li class="nav-item">
+              
+            </li>
+          </ul>
         </div>
-        <div class="navbar-collapse collapse navbar-right">
-
-        </div><!--/.nav-collapse -->
       </div>
-    </div>
+    </nav>
 
-
-	<!-- *****************************************************************************************************************
-	 BLUE WRAP
-	 ***************************************************************************************************************** -->
-	<div id="blue">
-	    <div class="container">
-			<div class="row">
-				<h3>Bienvenido</h3>
-			</div><!-- /row -->
-	    </div> <!-- /container -->
-	</div><!-- /blue -->
+	
 
 	<!-- *****************************************************************************************************************
 	 TITLE & CONTENT
 	 ***************************************************************************************************************** -->
-
-	 <div class="container mt">
-	 	<div class="row">
-		 	<div class="col-lg-10 col-lg-offset-1 centered">
-			 	<div Id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-				<!-- CODIGO -->
+ <!-- Page Content -->
+    <div class="container">
+	 
+	 	
 				
-						<p> Bienvenido Invitado </p>
-						 <form action="LoginServlet" name=formulario method="POST">
+			
+				 <div class="alert alert-success" role="alert">
+  					<p> Bienvenido Invitado </p>
+				</div>
+						 <h1 class="my-4">Catálogo</h1>
+								 <form action="LoginServlet" name=formulario method="POST">
 						 
-						 
-						 
-						 <center><h1>Listado de Peliculas</h1></center>
-											<style>
-												.demo {
-													border:1px solid #C0C0C0;
-													border-collapse:collapse;
-													padding:5px;
-												}
-												.demo th {
-													border:1px solid #C0C0C0;
-													padding:5px;
-													background:#F0F0F0;
-												}
-												.demo td {
-													border:1px solid #C0C0C0;
-													padding:5px;
-												}
-											</style>
-											<table class="demo">
-												<thead>
-												<tr>
-													<th>TITULO</th>
-													<th>IMAGEN</th>
-													<th>GENERO</th>
-													<th>SINOPSIS</th>
-												</tr>
-												</thead>
 												<%
 													Integer contador=0;
 													List<Pelicula> peliculas = (List<Pelicula>) request.getAttribute("peliculas");
 													for(Pelicula p : peliculas) { 
 												%>	
-												<tbody>
-												<tr>
-													<td><%=p.getTitulo() %></td>
-													<td><IMG SRC="img/<%=p.getIdPelicula()%>.jpg" height=300 width=500></img></td>
-													<td><%=p.getGenero()%></td>
-													<td><%=p.getSinopsis() %></td>
-												</tr>
-												<%contador=contador+1;}%>
-												</tbody>
-											</table>
+												
+													<div class="row">
+													
+											        <div class="col-lg-6 portfolio-item">
+											          <div class="card h-100">
+											            <a href="#"> <img style="width:399px" class="card-img-top" src="img/<%=p.getIdPelicula()%>.jpg" alt=""> </a> 
+											            <div class="card-body">
+											              <h4 class="card-title">
+											                <%=p.getTitulo() %>
+											              </h4>
+											              <p class="card-text"><%=p.getGenero()%></p>
+														  <p class="card-text"><%=p.getSinopsis() %></p>
+														  
+											            </div>
+											           
+											          </div>
+											        </div>
+											        
+											    </div>    
+													 <p class="card-text"><%contador=contador+1;}%></p>
+													 
+													 
+													 
+													 </form>	
+													<ul class="pagination justify-content-center">
+												        <li class="page-item">
+												          <a class="page-link" href="#" aria-label="Previous">
+												            <span aria-hidden="true">&laquo;</span>
+												            <span class="sr-only">Previous</span>
+												          </a>
+												        </li>
+												        <li class="page-item">
+												          <a class="page-link" href="#">1</a>
+												        </li>
+												        <li class="page-item">
+												          <a class="page-link" href="#">2</a>
+												        </li>
+												        <li class="page-item">
+												          <a class="page-link" href="#">3</a>
+												        </li>
+												        <li class="page-item">
+												          <a class="page-link" href="#" aria-label="Next">
+												            <span aria-hidden="true">&raquo;</span>
+												            <span class="sr-only">Next</span>
+												          </a>
+												        </li>
+											      </ul>
+													
+													</div>
+		 
+											
 						<input style="visibility:hidden" type="text" name="txtContador" value=<%out.println(contador);%> />
 						<input style="visibility:hidden" type="text" name="txtIdUsuario" value=<%=request.getAttribute("r_id") %> />
-						<br></br>
-						<br></br>
-						
-						 <br></br>
-						 </form>
+					
+					
 				
 				<!-- FIN CODIGO -->
 				
-				</div><! --/Carousel -->
-		 	</div>
-		 	
-
-		 	
-
-		 	
-	 	</div><! --/row -->
-	 </div><! --/container -->
+			
 	 
 
-
-	<!-- *****************************************************************************************************************
-	 FOOTER
-	 ***************************************************************************************************************** -->
-	 <div id="footerwrap">
-	 	<div class="container">
-		 	<div class="row">
-		 		<div class="col-lg-4">
-		 			<h4>Facundo Diaz</h4>
-		 			
-		 		</div>
-
-		 	
-		 	</div><! --/row -->
-	 	</div><! --/container -->
-	 </div><! --/footerwrap -->
-	 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-	<script src="assets/js/retina-1.1.0.js"></script>
-	<script src="assets/js/jquery.hoverdir.js"></script>
-	<script src="assets/js/jquery.hoverex.min.js"></script>
-	<script src="assets/js/jquery.prettyPhoto.js"></script>
-  	<script src="assets/js/jquery.isotope.min.js"></script>
-  	<script src="assets/js/custom.js"></script>
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Alumno: Nicolás Dalmás &copy;  2018</p>
+      </div>
+      <!-- /.container -->
+    </footer>
 
 
-    <script>
-// Portfolio
-(function($) {
-	"use strict";
-	var $container = $('.portfolio'),
-		$items = $container.find('.portfolio-item'),
-		portfolioLayout = 'fitRows';
-		
-		if( $container.hasClass('portfolio-centered') ) {
-			portfolioLayout = 'masonry';
-		}
-				
-		$container.isotope({
-			filter: '*',
-			animationEngine: 'best-available',
-			layoutMode: portfolioLayout,
-			animationOptions: {
-			duration: 750,
-			easing: 'linear',
-			queue: false
-		},
-		masonry: {
-		}
-		}, refreshWaypoints());
-		
-		function refreshWaypoints() {
-			setTimeout(function() {
-			}, 1000);   
-		}
-				
-		$('nav.portfolio-filter ul a').on('click', function() {
-				var selector = $(this).attr('data-filter');
-				$container.isotope({ filter: selector }, refreshWaypoints());
-				$('nav.portfolio-filter ul a').removeClass('active');
-				$(this).addClass('active');
-				return false;
-		});
-		
-		function getColumnNumber() { 
-			var winWidth = $(window).width(), 
-			columnNumber = 1;
-		
-			if (winWidth > 1200) {
-				columnNumber = 5;
-			} else if (winWidth > 950) {
-				columnNumber = 4;
-			} else if (winWidth > 600) {
-				columnNumber = 3;
-			} else if (winWidth > 400) {
-				columnNumber = 2;
-			} else if (winWidth > 250) {
-				columnNumber = 1;
-			}
-				return columnNumber;
-			}       
-			
-			function setColumns() {
-				var winWidth = $(window).width(), 
-				columnNumber = getColumnNumber(), 
-				itemWidth = Math.floor(winWidth / columnNumber);
-				
-				$container.find('.portfolio-item').each(function() { 
-					$(this).css( { 
-					width : itemWidth + 'px' 
-				});
-			});
-		}
-		
-		function setPortfolio() { 
-			setColumns();
-			$container.isotope('reLayout');
-		}
-			
-		$container.imagesLoaded(function () { 
-			setPortfolio();
-		});
-		
-		$(window).on('resize', function () { 
-		setPortfolio();          
-	});
-})(jQuery);
-</script>
   </body>
+
 </html>

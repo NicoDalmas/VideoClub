@@ -70,6 +70,16 @@
         </div>
        
    
+   
+   		     <div class="col-lg-6 portfolio-item">
+											         
+											            <a href="#"> <img  class="card-img-top" src="img/6.jpg" alt=""> </a> 
+											           
+											           
+											         
+											        </div>
+											        
+											    </div>
       <!-- /.row -->
 
       <!-- Pagination -->

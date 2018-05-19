@@ -12,13 +12,13 @@
     <title>Peliculas</title>
 
      <!-- Bootstrap core CSS -->
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> 
     
     
     <!-- Custom styles for this template -->
-    <link href="assets/css/2-col-portfolio.css" rel="stylesheet">
+     <link href="assets/css/2-col-portfolio.css" rel="stylesheet"> 
    
-    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+     <link href="assets/css/font-awesome.min.css" rel="stylesheet">  
 
 
   </head>
@@ -32,7 +32,6 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
               
@@ -70,13 +69,17 @@
 						 <h1 class="my-4">Catálogo</h1>
 								 <form action="LoginServlet" name=formulario method="POST">
 						 
+												   
 												<%
 													Integer contador=0;
 													List<Pelicula> peliculas = (List<Pelicula>) request.getAttribute("peliculas");
 													for(Pelicula p : peliculas) { 
+													
 												%>	
+													
+											 
 													<div class="row">
-											        <div style=col-lg-6 portfolio-item>
+											        <div class="col-lg-6 portfolio-item">
 											          <div class="card h-100">
 											            <a href="#"> <img style="width:399px" class="card-img-top" src="img/<%=p.getIdPelicula()%>.jpg" alt=""> </a> 
 											            <div class="card-body">
@@ -93,8 +96,6 @@
 											        
 											    </div>    
 													 <p class="card-text"><%contador=contador+1;}%></p>
-													 
-													 
 													 
 													 </form>	
 													<ul class="pagination justify-content-center">
@@ -123,6 +124,7 @@
 													
 													</div>
 		 
+		 
 											
 						<input style="visibility:hidden" type="text" name="txtContador" value=<%out.println(contador);%> />
 						<input style="visibility:hidden" type="text" name="txtIdUsuario" value=<%=request.getAttribute("r_id") %> />
@@ -141,7 +143,9 @@
       </div>
       <!-- /.container -->
     </footer>
-
+  <!-- Bootstrap core JavaScript -->
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   </body>
 
