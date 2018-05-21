@@ -8,6 +8,8 @@ public class Pelicula {
 	
 	private String genero;
 	
+	private String calificacion;
+	
 	private Integer idPelicula;
 
 	public Integer getIdPelicula() {
@@ -40,6 +42,14 @@ public class Pelicula {
 
 	public void setGenero(String genero) {
 		this.genero = genero;
+	}
+
+	public void setCalificacion(String calificacion) {
+		this.calificacion = calificacion;
+	}
+
+	public String getCalificacion() {
+		return calificacion;
 	}
 	
 	

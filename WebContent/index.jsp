@@ -71,15 +71,16 @@
        
    
    
-   		     <div class="col-lg-6 portfolio-item">
-											         
-											            <a href="#"> <img  class="card-img-top" src="img/6.jpg" alt=""> </a> 
-											           
-											           
-											         
-											        </div>
-											        
-											    </div>
+   		      <div class="col-lg-6 portfolio-item">
+										
+											
+             
+								<a href="#"> <img  class="card-img-top" src="img/a1.jpg" alt="Estreno!"> </a> 
+				<label class="label label-success">Nuevo Estreno! </label>  <label class="label label-default">No te pierdas la película más taquillera de la historia:   The Avengers Infinity War 2018. </label>
+			
+				     </div>
+				
+			   
       <!-- /.row -->
 
       <!-- Pagination -->

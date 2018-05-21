@@ -99,7 +99,7 @@
 											              <h4 class="card-title">
 											                <%=p.getTitulo() %>
 											              </h4>
-											              <p class="card-text"><%=p.getGenero()%></p>
+											              <p class="card-text"><%=p.getCalificacion()%></p>
 														  <p class="card-text"><%=p.getSinopsis() %></p>
 														  
 											            </div>
