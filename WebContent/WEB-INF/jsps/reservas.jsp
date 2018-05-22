@@ -105,6 +105,47 @@
 								 <center><input class="btn btn-success" type="submit" id="btnCerrarRes" name="btnEnviar" value=CerrarReservas disabled/></center>
 								 <center><input class="btn" type="submit" name="btnEnviar" value=volver /><center>
 								 </form>
+								 <br></br>
+								 <hr>
+								 <br>
+								
+								 
+			<!-- Gráficos -->
+			
+				 <div class="container">
+			<center><h1><small></>Gráficos</h1></small></center>	 
+			 <div class="row">	
+				
+			 <div class="col-lg-6 portfolio-item">
+          <div class="card h-100">
+            
+            <div class="card-body">
+              <h4  class="card-title">
+                <div class="p-3 mb-2 bg-success text-white">Grafico 1</div>
+              </h4>
+            
+                    
+            </div>
+            <canvas id="myChart"></canvas>
+          </div>
+        </div>
+       
+   
+   		 <div class="col-lg-6 portfolio-item">
+          <div class="card h-100">
+            
+            <div class="card-body">
+              <h4  class="card-title">
+                <div class="p-3 mb-2 bg-success text-white">Grafico 2</div>
+              </h4>
+            
+                    
+            </div>
+            <canvas id="myChart"></canvas>
+          </div>
+        </div>
+        </div> </div>
+			
 				
 				<!-- FIN CODIGO -->
 				
@@ -127,7 +168,37 @@
 	<script src="assets/js/jquery.prettyPhoto.js"></script>
   	<script src="assets/js/jquery.isotope.min.js"></script>
   	<script src="assets/js/custom.js"></script>
+  	
+  	<script src="assets/graficos/Chart.bundle.min.js"></script>
+		<script>
 
+			//Label
+			 // These labels appear in the legend and in the tooltips when hovering different arcs
+		
+
+			// Data
+						data = {
+						datasets: [{
+						label: "My First dataset",
+			            backgroundColor: ['rgb(255, 99, 132)', 'rgb(53, 161, 1)', 'rgb(53, 161, 216)', 'rgb(53, 50, 216)'],
+			            borderColor: 'rgb(255, 255, 255)',
+			   			data: [10, 20, 30]
+				}],
+				labels: [
+					        'Red',
+					        'Yellow',
+					        'Blue'
+					    ]};
+			
+			// Gráfico de Torta
+			// For a pie chart
+				var ctx = document.getElementById('myChart').getContext('2d');
+				var myPieChart = new Chart(ctx,{
+				    type: 'pie',
+				    data: data
+				});
+					
+		</script>
 
     <script>
 // Portfolio

@@ -11,6 +11,15 @@ public class Pelicula {
 	private String calificacion;
 	
 	private Integer idPelicula;
+	public Pelicula(){
+		
+	}
+	public Pelicula(Integer idPelicula, String titulo,String genero, String sinopsis){
+		this.idPelicula = idPelicula;
+		this.genero = genero;
+		this.sinopsis = sinopsis;
+		this.titulo = titulo;
+	}
 
 	public Integer getIdPelicula() {
 		return idPelicula;

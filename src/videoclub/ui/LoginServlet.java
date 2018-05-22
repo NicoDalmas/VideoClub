@@ -43,9 +43,7 @@ public class LoginServlet extends HttpServlet {
 				/* IF VOLVER */
 				if (boton.equals("volver")) {
 					// fin carga driver
-					// crear coneccion
-
-					// fin coneccion
+					
 					String nombre = request.getParameter("txtNombre");
 					Statement st = con.createStatement();
 					ResultSet rs = st
@@ -55,11 +53,12 @@ public class LoginServlet extends HttpServlet {
 					List<Pelicula> peliculas = new ArrayList<Pelicula>();
 					ResultSet rs2 = st2.executeQuery("SELECT * FROM Peliculas");
 					while (rs2.next()) {
-						Pelicula p = new Pelicula();
-						p.setTitulo(rs2.getString("titulo"));
+						Pelicula p = new Pelicula(rs2.getInt("idPelicula"),rs2.getString("titulo"), rs2.getString("genero"),rs2.getString("sinopsis"));
+						
+						/*p.setTitulo(rs2.getString("titulo"));
 						p.setSinopsis(rs2.getString("sinopsis"));
 						p.setGenero(rs2.getString("genero"));
-						p.setIdPelicula(rs2.getInt("idPelicula"));
+						p.setIdPelicula(rs2.getInt("idPelicula"));*/
 						peliculas.add(p);
 					}
 
@@ -103,11 +102,12 @@ public class LoginServlet extends HttpServlet {
 					List<Pelicula> peliculas = new ArrayList<Pelicula>();
 					ResultSet rs2 = st2.executeQuery("SELECT * FROM Peliculas");
 					while (rs2.next()) {
-						Pelicula p = new Pelicula();
+						Pelicula p = new Pelicula(rs2.getInt("idPelicula"),rs2.getString("titulo"), rs2.getString("genero"),rs2.getString("sinopsis"));
+						/*Pelicula p = new Pelicula();
 						p.setTitulo(rs2.getString("titulo"));
 						p.setSinopsis(rs2.getString("sinopsis"));
 						p.setGenero(rs2.getString("genero"));
-						p.setIdPelicula(rs2.getInt("idPelicula"));
+						p.setIdPelicula(rs2.getInt("idPelicula"));*/
 						peliculas.add(p);
 					}
 					// }
@@ -157,11 +157,12 @@ public class LoginServlet extends HttpServlet {
 					List<Pelicula> peliculas = new ArrayList<Pelicula>();
 					ResultSet rs2 = st2.executeQuery("SELECT * FROM Peliculas");
 					while (rs2.next()) {
-						Pelicula p = new Pelicula();
+						Pelicula p = new Pelicula(rs2.getInt("idPelicula"),rs2.getString("titulo"), rs2.getString("genero"),rs2.getString("sinopsis"));
+						/*Pelicula p = new Pelicula();
 						p.setTitulo(rs2.getString("titulo"));
 						p.setSinopsis(rs2.getString("sinopsis"));
 						p.setGenero(rs2.getString("genero"));
-						p.setIdPelicula(rs2.getInt("idPelicula"));
+						p.setIdPelicula(rs2.getInt("idPelicula"));*/
 						peliculas.add(p);
 					}
 					// }
@@ -202,11 +203,12 @@ public class LoginServlet extends HttpServlet {
 					List<Pelicula> peliculas = new ArrayList<Pelicula>();
 					ResultSet rs2 = st2.executeQuery("SELECT * FROM Peliculas");
 					while (rs2.next()) {
-						Pelicula p = new Pelicula();
+						Pelicula p = new Pelicula(rs2.getInt("idPelicula"),rs2.getString("titulo"), rs2.getString("genero"),rs2.getString("sinopsis"));
+						/*Pelicula p = new Pelicula();
 						p.setTitulo(rs2.getString("titulo"));
 						p.setSinopsis(rs2.getString("sinopsis"));
 						p.setGenero(rs2.getString("genero"));
-						p.setIdPelicula(rs2.getInt("idPelicula"));
+						p.setIdPelicula(rs2.getInt("idPelicula"));*/
 						peliculas.add(p);
 
 					}
