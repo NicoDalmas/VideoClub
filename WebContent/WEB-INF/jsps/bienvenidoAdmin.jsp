@@ -89,29 +89,63 @@
 												<%
 													Integer contador=0;
 													List<Pelicula> peliculas = (List<Pelicula>) request.getAttribute("peliculas");
-													for(Pelicula p : peliculas) { 
-												%>	
-													<div class="row">
-											        <div style=col-lg-6 portfolio-item>
-											          <div class="card h-100">
-											            <a href="#"> <img style="width:399px" class="card-img-top" src="img/<%=p.getIdPelicula()%>.jpg" alt=""> </a> 
-											            <div class="card-body">
-											              <h4 class="card-title">
-											                <%=p.getTitulo() %>
-											              </h4>
-											              <p class="card-text"><%=p.getCalificacion()%></p>
-														  <p class="card-text"><%=p.getSinopsis() %></p>
-														  
-											            </div>
-											           
-											          </div>
-											        </div>
-											        
-											    </div>    
-													 <p class="card-text"><%contador=contador+1;}%></p>
-													 
-													 
-													 
+													for(int i = 0;i < peliculas.size();i++){
+														
+													%>
+														<div class="row">
+												        <div style=col-lg-6 portfolio-item align="middle" style="margin:50px 0px padding: 25px">
+												            <div style="padding: 20px" >
+												            <div class="card h-100">
+												            <a href="#"> <img style="width:320px" height="200" class="card-img-top" src="img/<%=peliculas.get(i).getIdPelicula()%>.jpg" alt=""> </a> 
+												            <div class="card-body">
+												              <h5 class="card-title">
+												                <%=peliculas.get(i).getTitulo() %>
+												              </h5>
+												              
+															  <p class="card-text"><%=peliculas.get(i).getSinopsis() %></p>
+															  
+												            </div>
+												            </div>
+												           
+												          </div>
+												        </div>
+												        <%i = i +1;%>
+												        <div style=col-lg-6	portfolio-item align="middle" style="margin:50px 0px padding: 25px">
+												          <div style="padding: 20px" >
+												          <div class="card h-100">
+												            <a href="#"> <img style="width:320px" height="200" class="card-img-top" src="img/<%=peliculas.get(i).getIdPelicula()%>.jpg" alt=""> </a> 
+												            <div class="card-body">
+												              <h5 class="card-title">
+												                <%=peliculas.get(i).getTitulo()%>
+												              </h5>
+												             
+															  <p class="card-text"><%=peliculas.get(i).getSinopsis()%></p>
+															  
+												            </div>
+												            </div>
+												           
+												          </div>
+												        </div>
+												            <%i = i +1;%>
+												        <div style=col-lg-6	portfolio-item align="middle" style="margin:50px 0px padding: 25px">
+												            <div style="padding: 20px" >
+												            <div class="card h-100">
+												            <a href="#"> <img style="width:320px" height="200" class="card-img-top" src="img/<%=peliculas.get(i).getIdPelicula()%>.jpg" alt=""> </a> 
+												            <div class="card-body">
+												              <h5 class="card-title">
+												                <%=peliculas.get(i).getTitulo()%>
+												              </h5>
+												              <p class="card-text"><%=peliculas.get(i).getSinopsis()%></p>
+															  
+												            </div>
+												            </div>
+												           
+												          </div>
+												        </div>
+												
+												        
+												    </div>
+												    <%}%> 
 													 </form>	
 													<ul class="pagination justify-content-center">
 												        <li class="page-item">
@@ -140,7 +174,6 @@
 													</div>
 		 
 											
-						<input style="visibility:hidden" type="text" name="txtContador" value=<%out.println(contador);%> />
 						<input style="visibility:hidden" type="text" name="txtIdUsuario" value=<%=request.getAttribute("r_id") %> />
 						<input style="visibility:hidden" type="text" name="txtNombre" value=<%=request.getParameter("txtNombre")%>  />
 					
