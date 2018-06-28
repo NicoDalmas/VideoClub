@@ -104,7 +104,7 @@
 												              
 															  <p class="card-text"><%=peliculas.get(i).getSinopsis() %></p>
 															  
-												            </div>
+												       
 												            </div>
 												           
 												          </div>

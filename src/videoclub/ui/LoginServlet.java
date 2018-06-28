@@ -17,9 +17,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class LoginServlet
- */
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -46,8 +43,7 @@ public class LoginServlet extends HttpServlet {
 					
 					String nombre = request.getParameter("txtNombre");
 					Statement st = con.createStatement();
-					ResultSet rs = st
-							.executeQuery("SELECT * FROM Usuarios WHERE Login LIKE '"+nombre+"'");
+					ResultSet rs = st.executeQuery("SELECT * FROM Usuarios WHERE Login LIKE '"+nombre+"'");
 					Statement st2 = con.createStatement();
 
 					List<Pelicula> peliculas = new ArrayList<Pelicula>();
@@ -94,9 +90,7 @@ public class LoginServlet extends HttpServlet {
 					String nombre = request.getParameter("txtNombre");
 					String clave = request.getParameter("txtPassword");
 					Statement st = con.createStatement();
-					ResultSet rs = st
-							.executeQuery("SELECT * FROM Usuarios WHERE Login ='"
-									+ nombre + "' and Clave ='" + clave + "'");
+					ResultSet rs = st.executeQuery("SELECT * FROM Usuarios WHERE Login ='" + nombre + "' and Clave ='" + clave + "'");
 					Statement st2 = con.createStatement();
 
 					List<Pelicula> peliculas = new ArrayList<Pelicula>();

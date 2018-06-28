@@ -29,7 +29,7 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     
-    <script src="assets/js/modernizr.js"></script>
+   
   </head>
 
   <body>
@@ -121,7 +121,7 @@
 						 </p>
 				<!-- FIN CODIGO -->
 				
-				</div> <!--/Carousel -->
+				</div> 
 		 	</div>
 		 	
 
@@ -140,7 +140,7 @@
 	 	<div class="container">
 		 	<div class="row">
 		 		<div class="col-lg-4">
-		 			<h4>Facundo Diaz</h4>
+		 			<p class="m-0 text-center text-white">Alumno: Nicolás Dalmás &copy;  2018</p>
 		 			
 		 		</div>
 
