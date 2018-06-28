@@ -142,6 +142,13 @@
 												           
 												          </div>
 												        </div>
+												        
+												          															  
+												            </div>
+												            </div>
+												           
+												          </div>
+												        </div>
 												
 												        
 												    </div>
@@ -173,7 +180,6 @@
 													
 													</div>
 		 
-											
 						<input style="visibility:hidden" type="text" name="txtIdUsuario" value=<%=request.getAttribute("r_id") %> />
 						<input style="visibility:hidden" type="text" name="txtNombre" value=<%=request.getParameter("txtNombre")%>  />
 					
