@@ -77,9 +77,10 @@
 						<form action="LoginServlet" name=formulario method="POST" ">
 
 							  <%
-							  	if (request.getAttribute("usuario") != null) {
-								Usuario u = (Usuario) request.getAttribute("usuario");
-							  %>
+							 	if (request.getAttribute("usuario") != null) {
+								Usuario u = (Usuario) request.getAttribute("usuario"); 
+							 	 
+							  %>  
 								<table>	
 									<tr>
 										<td><label>Nombre de Usuario : </label></td>

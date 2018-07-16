@@ -19,6 +19,18 @@
     <servlet-name>LoginServlet</servlet-name>
     <url-pattern>/LoginServlet</url-pattern>
   </servlet-mapping>
+
+<servlet>
+    <description></description>
+    <display-name>ConnectionServlet</display-name>
+    <servlet-name>ConnectionServlet</servlet-name>
+    <servlet-class>videoclub.ui.ConnectionServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ConnectionServlet</servlet-name>
+    <url-pattern>/ConnectionServlet</url-pattern>
+  </servlet-mapping>
+
   <servlet>
     <description></description>
     <display-name>NvoUsuServlet</display-name>

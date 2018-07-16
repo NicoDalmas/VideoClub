@@ -18,24 +18,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class LoginServlet extends HttpServlet {
+	
 	private static final long serialVersionUID = 1L;
 
-	static {
-		try {
-			Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		}
-	}
 
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws IOException, ServletException {
 
 		try {
+			ConnectionServlet a = new ConnectionServlet();
 			Connection con = null;
 			try {
-				con = DriverManager.getConnection("jdbc:odbc:VideoClub");
-
+				con = a.getConnection();
+				
 				String boton = request.getParameter("btnEnviar");
 				/* IF VOLVER */
 				if (boton.equals("volver")) {
@@ -43,7 +38,7 @@ public class LoginServlet extends HttpServlet {
 					
 					String nombre = request.getParameter("txtNombre");
 					Statement st = con.createStatement();
-					ResultSet rs = st.executeQuery("SELECT * FROM Usuarios WHERE Login LIKE '"+nombre+"'");
+					ResultSet rs = st.executeQuery("SELECT * FROM Usuarios WHERE Login = '"+nombre+"'");
 					Statement st2 = con.createStatement();
 
 					List<Pelicula> peliculas = new ArrayList<Pelicula>();
@@ -207,8 +202,7 @@ public class LoginServlet extends HttpServlet {
 
 					}
 					request.setAttribute("peliculas", peliculas);
-					RequestDispatcher rd = request
-							.getRequestDispatcher("/WEB-INF/jsps/invitado.jsp");
+					RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsps/invitado.jsp");
 					rd.forward(request, response);
 				}
 				/* FIN IF INVITADO */
@@ -231,8 +225,7 @@ public class LoginServlet extends HttpServlet {
 
 					}
 					request.setAttribute("reservas", reservas);
-					RequestDispatcher rd = request
-							.getRequestDispatcher("/WEB-INF/jsps/reservas.jsp");
+					RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsps/reservas.jsp");
 					rd.forward(request, response);
 				}
 				/* FIN IF VER RESERVAS */
@@ -250,14 +243,10 @@ public class LoginServlet extends HttpServlet {
 					
 					Statement st = con.createStatement();
 					
-					ResultSet rs = st
-						.executeQuery("SELECT Login FROM Usuarios WHERE Login ='"
-							+ login + "'");
+					ResultSet rs = st.executeQuery("SELECT Login FROM Usuarios WHERE Login ='"+ login + "'");
 					if (rs.next()) {
-										RequestDispatcher rd = request
-										.getRequestDispatcher("/nuevoUsuario.jsp");
-										request.setAttribute("mensaje",
-										"Ya existe ese nombre de usuario");
+										RequestDispatcher rd = request.getRequestDispatcher("/nuevoUsuario.jsp");
+										request.setAttribute("mensaje",	"Ya existe ese nombre de usuario");
 										rd.forward(request, response);
 									}
 					else {
@@ -266,29 +255,23 @@ public class LoginServlet extends HttpServlet {
 									{
 										if(clave.equals(clave2))
 											{
-											int ra3 = st2
-											.executeUpdate("INSERT INTO Usuarios (Login,Clave,Nombre,Telefono,Direccion,admin) values ('"
+											int ra3 = st2.executeUpdate("INSERT INTO Usuarios (Login,Clave,Nombre,Telefono,Direccion,admin) values ('"
 													+ login + "','" + clave + "','" + nombre + "','" + telefono + "','" + direccion + "','No')");
 					
-											RequestDispatcher rd = request
-													.getRequestDispatcher("/WEB-INF/jsps/exito.jsp");
+											RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsps/exito.jsp");
 											rd.forward(request, response);
 											}
 										else
 											{
-											RequestDispatcher rd = request
-											.getRequestDispatcher("/nuevoUsuario.jsp");
-											request.setAttribute("mensaje",
-											"las claves no son iguales");
+											RequestDispatcher rd = request.getRequestDispatcher("/nuevoUsuario.jsp");
+											request.setAttribute("mensaje", "las claves no son iguales");
 											rd.forward(request, response);												
 											}
 										}
 									else
 										{
-											RequestDispatcher rd = request
-											.getRequestDispatcher("/nuevoUsuario.jsp");
-											request.setAttribute("mensaje",
-											"todos los campos son obligatorios");
+											RequestDispatcher rd = request.getRequestDispatcher("/nuevoUsuario.jsp");
+											request.setAttribute("mensaje","todos los campos son obligatorios");
 											rd.forward(request, response);
 										}
 						}
@@ -301,13 +284,11 @@ public class LoginServlet extends HttpServlet {
 								// fin coneccion
 								String idUsuario = request.getParameter("txtIdUsuario");
 			
-								
 								Statement st = con.createStatement();
 								
 								List<Usuario> usuario = new ArrayList<Usuario>();
 								
-								ResultSet rs = st
-									.executeQuery("SELECT Login, Clave,Nombre,Telefono,Direccion FROM Usuarios WHERE ID="
+								ResultSet rs = st.executeQuery("SELECT Login, Clave,Nombre,Telefono,Direccion FROM Usuarios WHERE ID="
 										+ idUsuario);
 								if (rs.next()) {
 										Usuario u = new Usuario();
