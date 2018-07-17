@@ -1,18 +1,50 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Fin</title>
-<h1>La operacion se realizo con exito</h1>
-<form action="LoginServlet" name=formulario method="POST">
-<input style="visibility:hidden" type="text" name="txtNombre" value=<%=request.getParameter("txtNombre")%>  />
-<input style="visibility:hidden" type="text" name="txtIdUsuario" value=<%=request.getParameter("txtIdUsuario")%>  />
-<input type="submit" name="btnEnviar" value=volver />
-</form>
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>Error</title>
+
+<!-- Bootstrap core CSS -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    
+
+    <!-- Custom styles for this template -->
+   
+    <link href="assets/css/2-col-portfolio.css" rel="stylesheet">
+
+   	<link href="assets/css/bootstrap.css" rel="stylesheet">
+
+   
+  </head>
 </head>
 <body>
 
+<!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#"> La operación se realizó correctamente</a>
+      </div>
+    </nav>
+
+<!-- Page Content -->
+    <div class="container">
+
+      <!-- Page Heading -->
+      <h1 class="my-4">Éxito!
+        <small> ha completado satisfactoriamente la acción</small>
+      </h1>
+
+
+<form action="LoginServlet" name=formulario method="POST">
+<input style="visibility:hidden" type="text" name="txtNombre" value=<%=request.getParameter("txtNombre")%>  />
+<input style="visibility:hidden" type="text" name="txtIdUsuario" value=<%=request.getParameter("txtIdUsuario")%>  />
+<input class="btn btn-success" type="submit" name="btnEnviar" value=volver />
+
+</form>
 </body>
 </html>

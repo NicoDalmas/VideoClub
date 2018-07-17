@@ -147,11 +147,6 @@ public class LoginServlet extends HttpServlet {
 					ResultSet rs2 = st2.executeQuery("SELECT * FROM Peliculas");
 					while (rs2.next()) {
 						Pelicula p = new Pelicula(rs2.getInt("idPelicula"),rs2.getString("titulo"), rs2.getString("genero"),rs2.getString("sinopsis"));
-						/*Pelicula p = new Pelicula();
-						p.setTitulo(rs2.getString("titulo"));
-						p.setSinopsis(rs2.getString("sinopsis"));
-						p.setGenero(rs2.getString("genero"));
-						p.setIdPelicula(rs2.getInt("idPelicula"));*/
 						peliculas.add(p);
 					}
 					// }
@@ -193,11 +188,7 @@ public class LoginServlet extends HttpServlet {
 					ResultSet rs2 = st2.executeQuery("SELECT * FROM Peliculas");
 					while (rs2.next()) {
 						Pelicula p = new Pelicula(rs2.getInt("idPelicula"),rs2.getString("titulo"), rs2.getString("genero"),rs2.getString("sinopsis"));
-						/*Pelicula p = new Pelicula();
-						p.setTitulo(rs2.getString("titulo"));
-						p.setSinopsis(rs2.getString("sinopsis"));
-						p.setGenero(rs2.getString("genero"));
-						p.setIdPelicula(rs2.getInt("idPelicula"));*/
+
 						peliculas.add(p);
 
 					}
@@ -288,8 +279,7 @@ public class LoginServlet extends HttpServlet {
 								
 								List<Usuario> usuario = new ArrayList<Usuario>();
 								
-								ResultSet rs = st.executeQuery("SELECT Login, Clave,Nombre,Telefono,Direccion FROM Usuarios WHERE ID="
-										+ idUsuario);
+								ResultSet rs = st.executeQuery("SELECT Login, Clave,Nombre,Telefono,Direccion FROM Usuarios WHERE ID=" + idUsuario);
 								if (rs.next()) {
 										Usuario u = new Usuario();
 										u.setLogin(rs.getString("Login"));
@@ -331,8 +321,7 @@ public class LoginServlet extends HttpServlet {
 							Statement st = con.createStatement();
 							
 							int ra = st
-							.executeUpdate("UPDATE Usuarios set Nombre='"+ nombre +"', Clave='"+ clave +"', Direccion='"
-									+ direccion +"', Telefono='"+ telefono +"' WHERE Login ='"+ login + "'");
+							.executeUpdate("UPDATE Usuarios set Nombre='"+ nombre +"', Clave='"+ clave +"', Direccion='" + direccion +"', Telefono='"+ telefono +"' WHERE Login ='"+ login + "'");
 						
 							RequestDispatcher rd = request
 							.getRequestDispatcher("/WEB-INF/jsps/exito.jsp");
@@ -343,8 +332,7 @@ public class LoginServlet extends HttpServlet {
 							{	
 							request.setAttribute("usuario", u);
 							request.setAttribute("mensaje","Las claves no son iguales");
-							RequestDispatcher rd = request
-							.getRequestDispatcher("/WEB-INF/jsps/modificarUsuario.jsp");
+							RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsps/modificarUsuario.jsp");
 							rd.forward(request, response);					
 							}
 					}
