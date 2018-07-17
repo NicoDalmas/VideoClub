@@ -78,6 +78,8 @@
 									  <div align=center class="col-sm-4"><input class="btn btn-info" type="submit" name="btnEnviar" value=VerReservas /></div>
 									  <div align=center class="col-sm-4"></div>
 								 </div>	
+								 <input style="visibility:hidden" type="text" name="txtIdUsuario" value=<%=request.getAttribute("r_id") %> />
+								 <input style="visibility:hidden" type="text" name="txtNombre" value=<%=request.getParameter("txtNombre")%>  />
 							</form>	 
 						</div>
 					</div>		
@@ -152,6 +154,7 @@
 												        
 												    </div>
 												    <%}%> 
+													  	  		
 													 </form>	
 													<ul class="pagination justify-content-center">
 												        <li class="page-item">
@@ -179,8 +182,7 @@
 													
 													</div>
 		 
-						<input style="visibility:hidden" type="text" name="txtIdUsuario" value=<%=request.getAttribute("r_id") %> />
-						<input style="visibility:hidden" type="text" name="txtNombre" value=<%=request.getParameter("txtNombre")%>  />
+						
 					
 				
 				<!-- FIN CODIGO -->

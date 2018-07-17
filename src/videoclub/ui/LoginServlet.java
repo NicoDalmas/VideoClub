@@ -26,10 +26,9 @@ public class LoginServlet extends HttpServlet {
 			HttpServletResponse response) throws IOException, ServletException {
 
 		try {
-			ConnectionServlet a = new ConnectionServlet();
 			Connection con = null;
 			try {
-				con = a.getConnection();
+				con = ConnectionServlet.getConnection();
 				
 				String boton = request.getParameter("btnEnviar");
 				/* IF VOLVER */
@@ -53,22 +52,19 @@ public class LoginServlet extends HttpServlet {
 					request.setAttribute("peliculas", peliculas);
 					if (rs.next()) {
 						String admin = rs.getString("admin");
+						RequestDispatcher rd;
 						if ( admin.equals("admin"))
 							{
-							RequestDispatcher rd = request
-							.getRequestDispatcher("/WEB-INF/jsps/bienvenidoAdmin.jsp");
-							request.setAttribute("r_nombre", rs.getString("login"));
-							request.setAttribute("r_id", rs.getString("id"));
-							rd.forward(request, response);
+							rd = request.getRequestDispatcher("/WEB-INF/jsps/bienvenidoAdmin.jsp");
 							}
 						else
 							{
-							RequestDispatcher rd = request
-							.getRequestDispatcher("/WEB-INF/jsps/bienvenido.jsp");
-							request.setAttribute("r_nombre", rs.getString("login"));
-							request.setAttribute("r_id", rs.getString("id"));
-							rd.forward(request, response);
+							rd = request.getRequestDispatcher("/WEB-INF/jsps/bienvenido.jsp");
+							
 							}
+						request.setAttribute("r_nombre", rs.getString("login"));
+						request.setAttribute("r_id", rs.getString("id"));
+						rd.forward(request, response);
 					} 
 				}
 				/* FIN IF VOLVER */
@@ -103,28 +99,24 @@ public class LoginServlet extends HttpServlet {
 
 					request.setAttribute("peliculas", peliculas);
 					if (rs.next()) {
+						
 						String admin = rs.getString("admin");
+						RequestDispatcher rd;
 						if ( admin.equals("admin"))
 							{
-							RequestDispatcher rd = request
-							.getRequestDispatcher("/WEB-INF/jsps/bienvenidoAdmin.jsp");
-							request.setAttribute("r_nombre", rs.getString("login"));
-							request.setAttribute("r_id", rs.getString("id"));
-							rd.forward(request, response);
+							rd = request.getRequestDispatcher("/WEB-INF/jsps/bienvenidoAdmin.jsp");
 							}
 						else
 							{
-							RequestDispatcher rd = request
-							.getRequestDispatcher("/WEB-INF/jsps/bienvenido.jsp");
-							request.setAttribute("r_nombre", rs.getString("login"));
-							request.setAttribute("r_id", rs.getString("id"));
-							rd.forward(request, response);
+							rd = request.getRequestDispatcher("/WEB-INF/jsps/bienvenido.jsp");
+							
 							}
+						request.setAttribute("r_nombre", rs.getString("login"));
+						request.setAttribute("r_id", rs.getString("id"));
+						rd.forward(request, response);
 					} else {
-						RequestDispatcher rd = request
-								.getRequestDispatcher("/index.jsp");
-						request.setAttribute("mensaje",
-								"error de clave o usuario");
+						RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
+						request.setAttribute("mensaje",	"error de clave o usuario");
 						rd.forward(request, response);
 					}
 				}
@@ -138,9 +130,7 @@ public class LoginServlet extends HttpServlet {
 					String nombre = request.getParameter("txtNombre");
 					
 					Statement st = con.createStatement();
-					ResultSet rs = st
-							.executeQuery("SELECT * FROM Usuarios WHERE Login ='"
-									+ nombre + "'");
+					ResultSet rs = st.executeQuery("SELECT * FROM Usuarios WHERE Login ='" + nombre + "'");
 					Statement st2 = con.createStatement();
 
 					List<Pelicula> peliculas = new ArrayList<Pelicula>();
@@ -154,27 +144,21 @@ public class LoginServlet extends HttpServlet {
 					request.setAttribute("peliculas", peliculas);
 					if (rs.next()) {
 						String admin = rs.getString("admin");
+						RequestDispatcher rd;
 						if ( admin.equals("admin"))
 							{
-							RequestDispatcher rd = request
-							.getRequestDispatcher("/WEB-INF/jsps/bienvenidoAdmin.jsp");
-							request.setAttribute("r_nombre", rs.getString("login"));
-							request.setAttribute("r_id", rs.getString("id"));
-							rd.forward(request, response);
+							rd = request.getRequestDispatcher("/WEB-INF/jsps/bienvenidoAdmin.jsp");
 							}
 						else
 							{
-							RequestDispatcher rd = request
-							.getRequestDispatcher("/WEB-INF/jsps/bienvenido.jsp");
-							request.setAttribute("r_nombre", rs.getString("login"));
-							request.setAttribute("r_id", rs.getString("id"));
-							rd.forward(request, response);
+							rd = request.getRequestDispatcher("/WEB-INF/jsps/bienvenido.jsp");
 							}
+						request.setAttribute("r_nombre", rs.getString("login"));
+						request.setAttribute("r_id", rs.getString("id"));
+						rd.forward(request, response);
 					} else {
-						RequestDispatcher rd = request
-								.getRequestDispatcher("/index.jsp");
-						request.setAttribute("mensaje",
-								"error de clave o usuario");
+						RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
+						request.setAttribute("mensaje", "error de clave o usuario");
 						rd.forward(request, response);
 					}
 				}
@@ -188,7 +172,6 @@ public class LoginServlet extends HttpServlet {
 					ResultSet rs2 = st2.executeQuery("SELECT * FROM Peliculas");
 					while (rs2.next()) {
 						Pelicula p = new Pelicula(rs2.getInt("idPelicula"),rs2.getString("titulo"), rs2.getString("genero"),rs2.getString("sinopsis"));
-
 						peliculas.add(p);
 
 					}
@@ -300,54 +283,47 @@ public class LoginServlet extends HttpServlet {
 					// fin carga driver
 					// crear coneccion
 					// fin coneccion
-					String login = request.getParameter("txtNombre");
+					/*String login = request.getParameter("txtNombre");
 					String clave = request.getParameter("txtPassword");
 					String clave2 = request.getParameter("txtPassword2");
 					String nombre = request.getParameter("txtNombreReal");
 					String telefono = request.getParameter("txtTelefono");
 					String direccion = request.getParameter("txtDireccion");
-					
-					Usuario u = new Usuario();
-					u.setLogin(login);
-					u.setClave(clave);
-					u.setNombre(nombre);
-					u.setTelefono(telefono);
-					u.setDireccion(direccion);
-					
-					if(login != "" && clave != "" && clave2 != "" && nombre != "" && telefono != "" && direccion != ""  )
+					SE USA EL CONSTRUCTOR DEL USUARIO
+					*/
+					Usuario u = new Usuario(request.getParameter("txtNombre"), request.getParameter("txtPassword"), request.getParameter("txtNombreReal"), request.getParameter("txtTelefono"), request.getParameter("txtDireccion"));
+
+					if(request.getParameter("txtNombre") != "" && request.getParameter("txtPassword") != "" && request.getParameter("txtPassword2") != "" && request.getParameter("txtNombreReal") != "" && request.getParameter("txtTelefono") != "" && request.getParameter("txtDireccion") != ""   )
 					{
-						if(clave.equals(clave2))
-							{
-							Statement st = con.createStatement();
-							
-							int ra = st
-							.executeUpdate("UPDATE Usuarios set Nombre='"+ nombre +"', Clave='"+ clave +"', Direccion='" + direccion +"', Telefono='"+ telefono +"' WHERE Login ='"+ login + "'");
-						
-							RequestDispatcher rd = request
-							.getRequestDispatcher("/WEB-INF/jsps/exito.jsp");
-							rd.forward(request, response);
-							
-							}
-						else
-							{	
-							request.setAttribute("usuario", u);
-							request.setAttribute("mensaje","Las claves no son iguales");
-							RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsps/modificarUsuario.jsp");
-							rd.forward(request, response);					
-							}
+					RequestDispatcher rd;
+					if(request.getParameter("txtPassword").equals(request.getParameter("txtPassword2")))
+					{
+					Statement st = con.createStatement();
+
+					int ra = st.executeUpdate("UPDATE Usuarios set Nombre='"+ request.getParameter("txtNombreReal") +"', Clave='"+ request.getParameter("txtPassword") +"', Direccion='" + request.getParameter("txtDireccion") +"', Telefono='"+ request.getParameter("txtTelefono") +"' WHERE Login ='"+ request.getParameter("txtNombre") + "'");
+
+					rd = request.getRequestDispatcher("/WEB-INF/jsps/exito.jsp");
 					}
 					else
-						{
-							request.setAttribute("usuario", u);
-							request.setAttribute("mensaje","Todos los campos son obligatorios");
-							RequestDispatcher rd = request
-							.getRequestDispatcher("/WEB-INF/jsps/modificarUsuario.jsp");
-							rd.forward(request, response);					
-						}
+					{ 
+					request.setAttribute("usuario", u);
+					request.setAttribute("mensaje","Las claves no son iguales");
+					rd = request.getRequestDispatcher("/WEB-INF/jsps/modificarUsuario.jsp"); 
+					}
+					rd.forward(request, response);
+					}
+					else
+					{
+					request.setAttribute("usuario", u);
+					request.setAttribute("mensaje","Todos los campos son obligatorios");
+					RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsps/modificarUsuario.jsp");
+					rd.forward(request, response); 
+					}
 
 					}
-				/* FIN IF GUARDAR CAMBIOS */
-				// IF RESERVAR
+					/* FIN IF GUARDAR CAMBIOS */
+					// IF RESERVAR
+
 				else if (boton.equals("reservar")) {
 					String totalPelicula = request.getParameter("txtContador");
 					int totalPelicula2 = Integer.parseInt(totalPelicula);
@@ -418,8 +394,7 @@ public class LoginServlet extends HttpServlet {
 					idReservaMarcada = request.getParameterValues("chxReservas");
 					if (idReservaMarcada.length == 0)// if valida que haya seleccionado al menos una reserva
 						{
-						RequestDispatcher rd = request
-								.getRequestDispatcher("/index.jsp");
+						RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
 
 						rd.forward(request, response);
 						} 

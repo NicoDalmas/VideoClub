@@ -3,6 +3,18 @@ package videoclub.ui;
 public class Usuario {
 
 	private String login;
+
+	public Usuario(String login, String clave,String nombre, String telefono, String direccion){
+		this.login = login;
+		this.clave = clave;
+		this.nombre = nombre;
+		this.telefono = telefono;
+		this.direccion = direccion;
+	}
+	
+	public Usuario(){
+
+	}
 	
 	public String getClave() {
 		return clave;
