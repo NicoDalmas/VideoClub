@@ -21,12 +21,12 @@ public class ConnectionServlet extends Servlet {
                 con = DriverManager.getConnection("jdbc:odbc:VideoClub");
             } catch (SQLException ex) {
                 // log an exception. fro example:
-                System.out.println("Failed to create the database connection."); 
+                System.out.println("Hubo un error al crear la conexion a la base de datos"); 
                 ex.printStackTrace();
             }
         } catch (ClassNotFoundException ex) {
             // log an exception. for example:
-            System.out.println("Driver not found.");
+            System.out.println("No funciona el Driver de conexion a la BD.");
             ex.printStackTrace();
         }
         return con;

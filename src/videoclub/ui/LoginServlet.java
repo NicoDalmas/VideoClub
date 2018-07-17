@@ -46,10 +46,7 @@ public class LoginServlet extends HttpServlet {
 					while (rs2.next()) {
 						Pelicula p = new Pelicula(rs2.getInt("idPelicula"),rs2.getString("titulo"), rs2.getString("genero"),rs2.getString("sinopsis"));
 						
-						/*p.setTitulo(rs2.getString("titulo"));
-						p.setSinopsis(rs2.getString("sinopsis"));
-						p.setGenero(rs2.getString("genero"));
-						p.setIdPelicula(rs2.getInt("idPelicula"));*/
+
 						peliculas.add(p);
 					}
 
@@ -97,6 +94,9 @@ public class LoginServlet extends HttpServlet {
 						p.setSinopsis(rs2.getString("sinopsis"));
 						p.setGenero(rs2.getString("genero"));
 						p.setIdPelicula(rs2.getInt("idPelicula"));*/
+						
+						// se usa un constructor 
+						
 						peliculas.add(p);
 					}
 					// }
@@ -438,9 +438,7 @@ public class LoginServlet extends HttpServlet {
 						}
 				}// FIN IF CERRAR RESERVAS
 				else {
-					RequestDispatcher rd = request
-							.getRequestDispatcher("/index.jsp");
-
+					RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
 					rd.forward(request, response);
 				}
 			} finally {
