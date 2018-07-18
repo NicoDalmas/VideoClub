@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1" import="java.util.List, videoclub.ui.Pelicula"%>
 <!DOCTYPE html>
 <html lang="es">
-  <head>
+<head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,19 +10,14 @@
 	 
     <title>Peliculas</title>
 
-     <!-- Bootstrap core CSS -->
+    <!-- Bootstrap CSS -->
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    
-    
-    <!-- Custom styles for this template -->
     <link href="assets/css/2-col-portfolio.css" rel="stylesheet">
-   
     <link href="assets/css/font-awesome.min.css" rel="stylesheet">
 
+</head>
 
-  </head>
-
-  <body>
+<body>
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -34,18 +29,14 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              
-                <span class="sr-only">(current)</span>
-              </a>
+            	<span class="sr-only">(current)</span> </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="index.jsp">Volver</a>
             </li>
             <li class="nav-item">
-             
             </li>
             <li class="nav-item">
-              
             </li>
           </ul>
         </div>
@@ -53,152 +44,99 @@
     </nav>
 
 	
-
-	<!-- *****************************************************************************************************************
-	 TITLE & CONTENT
-	 ***************************************************************************************************************** -->
  <!-- Page Content -->
     <div class="container">
-	 
-	 	
-				
-			
-				 <div class="alert alert-success" role="alert">
-					<p> Bienvenido administrador: <%=request.getAttribute("r_nombre") %> </p>
+		<div class="alert alert-success" role="alert">
+			<p> Bienvenido administrador: <%=request.getAttribute("r_nombre") %> </p>
+		</div>
+		<div class="container"> 
+			<h1>Panel de Administración</h1>
+			<div class="jumbotron">
+				<div class="form-group"> 
+					<form action="LoginServlet" name=formulario method="POST">
+						<div class="row">
+							<div align=center class="col-sm-4"><input class="btn btn-success" type="submit" name="btnEnviar" value=ModificarDatos /></div>
+							<div align=center class="col-sm-4"><input class="btn btn-info" type="submit" name="btnEnviar" value=VerReservas /></div>
+							<div align=center class="col-sm-4"></div>
+						</div>	
+						<input style="visibility:hidden" type="text" name="txtIdUsuario" value=<%=request.getAttribute("r_id") %> />
+						<input style="visibility:hidden" type="text" name="txtNombre" value=<%=request.getParameter("txtNombre")%>  />
+					</form>	 
 				</div>
-				
-				
-				<div class="container"> 
-				<h1>Panel de Administración</h1>
-					<div class="jumbotron">
-						<div class="form-group"> 
-							<form action="LoginServlet" name=formulario method="POST">
-								  <div class="row">
-									  <div align=center class="col-sm-4"><input class="btn btn-success" type="submit" name="btnEnviar" value=ModificarDatos /></div>
-									  <div align=center class="col-sm-4"><input class="btn btn-info" type="submit" name="btnEnviar" value=VerReservas /></div>
-									  <div align=center class="col-sm-4"></div>
-								 </div>	
-								 <input style="visibility:hidden" type="text" name="txtIdUsuario" value=<%=request.getAttribute("r_id") %> />
-								 <input style="visibility:hidden" type="text" name="txtNombre" value=<%=request.getParameter("txtNombre")%>  />
-							</form>	 
-						</div>
-					</div>		
-				</div>  
-						 <h1 class="my-4">Catálogo</h1>
-								 <form action="LoginServlet" name=formulario method="POST">
-						 
-												<%
-													Integer contador=0;
-													List<Pelicula> peliculas = (List<Pelicula>) request.getAttribute("peliculas");
-													for(int i = 0;i < peliculas.size();i++){
-														
-													%>
-														<div class="row">
-												        <div style=col-lg-6 portfolio-item align="middle" style="margin:50px 0px padding: 25px">
-												            <div style="padding: 20px" >
-												            <div class="card h-100">
-												            <a href="#"> <img style="width:320px" height="200" class="card-img-top" src="img/<%=peliculas.get(i).getIdPelicula()%>.jpg" alt=""> </a> 
-												            <div class="card-body">
-												              <h5 class="card-title">
-												                <%=peliculas.get(i).getTitulo() %>
-												              </h5>
-												              
-															  <p class="card-text"><%=peliculas.get(i).getSinopsis() %></p>
-															  
-												       
-												            </div>
-												           
-												          </div>
-												        </div>
-												        <%i = i +1;%>
-												        <div style=col-lg-6	portfolio-item align="middle" style="margin:50px 0px padding: 25px">
-												          <div style="padding: 20px" >
-												          <div class="card h-100">
-												            <a href="#"> <img style="width:320px" height="200" class="card-img-top" src="img/<%=peliculas.get(i).getIdPelicula()%>.jpg" alt=""> </a> 
-												            <div class="card-body">
-												              <h5 class="card-title">
-												                <%=peliculas.get(i).getTitulo()%>
-												              </h5>
-												             
-															  <p class="card-text"><%=peliculas.get(i).getSinopsis()%></p>
-															  
-												            </div>
-												            </div>
-												           
-												          </div>
-												        </div>
-												            <%i = i +1;%>
-												        <div style=col-lg-6	portfolio-item align="middle" style="margin:50px 0px padding: 25px">
-												            <div style="padding: 20px" >
-												            <div class="card h-100">
-												            <a href="#"> <img style="width:320px" height="200" class="card-img-top" src="img/<%=peliculas.get(i).getIdPelicula()%>.jpg" alt=""> </a> 
-												            <div class="card-body">
-												              <h5 class="card-title">
-												                <%=peliculas.get(i).getTitulo()%>
-												              </h5>
-												              <p class="card-text"><%=peliculas.get(i).getSinopsis()%></p>
-															  
-												            </div>
-												            </div>
-												           
-												          </div>
-												        </div>
-												        
-												          															  
-												            </div>
-												            </div>
-												           
-												          </div>
-												        </div>
-												
-												        
-												    </div>
-												    <%}%> 
-													  	  		
-													 </form>	
-													<ul class="pagination justify-content-center">
-												        <li class="page-item">
-												          <a class="page-link" href="#" aria-label="Previous">
-												            <span aria-hidden="true">&laquo;</span>
-												            <span class="sr-only">Previous</span>
-												          </a>
-												        </li>
-												        <li class="page-item">
-												          <a class="page-link" href="#">1</a>
-												        </li>
-												        <li class="page-item">
-												          <a class="page-link" href="#">2</a>
-												        </li>
-												        <li class="page-item">
-												          <a class="page-link" href="#">3</a>
-												        </li>
-												        <li class="page-item">
-												          <a class="page-link" href="#" aria-label="Next">
-												            <span aria-hidden="true">&raquo;</span>
-												            <span class="sr-only">Next</span>
-												          </a>
-												        </li>
-											      </ul>
-													
-													</div>
-		 
-						
-					
-				
-				<!-- FIN CODIGO -->
-				
+			</div>		
+		</div>  
+		<h1 class="my-4">Catálogo</h1>
+			<form action="LoginServlet" name=formulario method="POST">
+				<%
+					Integer contador=0;
+					List<Pelicula> peliculas = (List<Pelicula>) request.getAttribute("peliculas");
+					for(int i = 0;i < peliculas.size();i++){
+				%>
+				<div class="row">
+		        	<div style=col-lg-6 portfolio-item align="middle" style="margin:50px 0px padding: 25px">
+		           		<div style="padding: 20px" >
+		           			<div class="card h-100">
+		           				<a href="#"> <img style="width:320px" height="200" class="card-img-top" src="img/<%=peliculas.get(i).getIdPelicula()%>.jpg" alt=""> </a> 
+		           				<div class="card-body">
+						           <h5 class="card-title">
+										<%=peliculas.get(i).getTitulo() %>
+						           </h5>
+		              			   <p class="card-text"><%=peliculas.get(i).getSinopsis() %></p>
+					  			</div>
+		          			</div>
+		        		</div>
+				        <%i = i +1;%>
+				        <div style=col-lg-6	portfolio-item align="middle" style="margin:50px 0px padding: 25px">
+				        	<div style="padding: 20px" >
+				          		<div class="card h-100">
+				            		<a href="#"> <img style="width:320px" height="200" class="card-img-top" src="img/<%=peliculas.get(i).getIdPelicula()%>.jpg" alt=""> </a> 
+				            			<div class="card-body">
+				              				<h5 class="card-title">
+				                				<%=peliculas.get(i).getTitulo()%>
+				              				</h5>
+							  			<p class="card-text"><%=peliculas.get(i).getSinopsis()%></p>
+				            			</div>
+				            	</div>
+				           </div>
+				        </div>
+			       </div>	<%}%>	 	  
+			   </div>
+		 </div>
+	</form>	
 			
-	 
-
-    <!-- Footer -->
-    <footer class="py-5 bg-dark">
-      <div class="container">
-        <p class="m-0 text-center text-white">Alumno: Nicolás Dalmás &copy;  2018</p>
-      </div>
-      <!-- /.container -->
-    </footer>
-
-
-  </body>
-
+		
+	<!-- Page Content -->
+	<ul class="pagination justify-content-center">
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+            <span class="sr-only">Previous</span>
+          </a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#">1</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#">2</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#">3</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+            <span class="sr-only">Next</span>
+          </a>
+        </li>
+     	</ul>
+						
+<!-- FIN CODIGO -->
+    
+<!-- Footer -->
+<footer class="py-5 bg-dark">
+   <div class="container">
+     <p class="m-0 text-center text-white">Alumno: Nicolás Dalmás &copy;  2018</p>
+   </div>
+</footer>
+</body>
 </html>
