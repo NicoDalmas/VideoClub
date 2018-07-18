@@ -30,6 +30,28 @@
     <servlet-name>ConnectionServlet</servlet-name>
     <url-pattern>/ConnectionServlet</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>ReservaServlet</display-name>
+    <servlet-name>ReservaServlet</servlet-name>
+    <servlet-class>videoclub.ui.ReservaServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReservaServlet</servlet-name>
+    <url-pattern>/ReservaServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>ModificarDatosServlet</display-name>
+    <servlet-name>ModificarDatosServlet</servlet-name>
+    <servlet-class>videoclub.ui.ModificarDatosServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ModificarDatosServlet</servlet-name>
+    <url-pattern>/ModificarDatosServlet</url-pattern>
+  </servlet-mapping>
 
   <servlet>
     <description></description>

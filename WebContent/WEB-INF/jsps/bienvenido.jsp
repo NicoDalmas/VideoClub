@@ -57,12 +57,12 @@
 	 <div class="container mt">
 	 	<div class="row">
 		 	<div class="col-lg-10 col-lg-offset-1 centered">
-			 	<div Id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 				<!-- CODIGO -->
 				
 						<p> Bienvenido <%=request.getAttribute("r_nombre") %> </p>
-						 <form action="LoginServlet" name=formulario method="POST">
-						 <input type="submit" name="btnEnviar" value=ModificarDatos /></br>
+						 <form action="ReservaServlet" name=formulario method="POST">
+						 <input type="button" class="btn btn-primary" name="btnEnviar" onclick="form.action='ModificarDatosServlet';" value="Modificar Datos" />
+						 <br></br>
 						 <a href="index.jsp">Salir</a>
 						 
 						 <center><h1> Listado de Peliculas </h1></center>
@@ -119,7 +119,7 @@
 				
 				<!-- FIN CODIGO -->
 				
-				</div><! --/Carousel -->
+				<! --/Carousel -->
 		 	</div>
 		 	
 		 	

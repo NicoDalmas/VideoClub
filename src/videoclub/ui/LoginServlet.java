@@ -252,7 +252,7 @@ public class LoginServlet extends HttpServlet {
 				}
 				/* FIN IF NUEVO USUARIO */
 				/* IF Modificar Datos */
-				else if (boton.equals("ModificarDatos")) {
+				/*else if (boton.equals("ModificarDatos")) {
 								// fin carga driver
 								// crear coneccion
 								// fin coneccion
@@ -276,7 +276,7 @@ public class LoginServlet extends HttpServlet {
 										request.setAttribute("usuario",u);
 										rd.forward(request, response);
 										}
-						}
+						}*/
 				/* FIN IF Modificar Datos */
 				/* IF GUARDAR CAMBIOS */
 				else if (boton.equals("GuardarCambios")) {
@@ -324,7 +324,7 @@ public class LoginServlet extends HttpServlet {
 					/* FIN IF GUARDAR CAMBIOS */
 					// IF RESERVAR
 
-				else if (boton.equals("reservar")) {
+				/*else if (boton.equals("reservar")) {
 					String totalPelicula = request.getParameter("txtContador");
 					int totalPelicula2 = Integer.parseInt(totalPelicula);
 
@@ -381,7 +381,7 @@ public class LoginServlet extends HttpServlet {
 					// finif valida que haya reservado una pelicula
 				}// FIN IF RESERVAR
 				// IF CERRAR RESERVAS
-				else if (boton.equals("CerrarReservas")) {
+				*/else if (boton.equals("CerrarReservas")) {
 
 					Calendar calendario = new GregorianCalendar();
 
