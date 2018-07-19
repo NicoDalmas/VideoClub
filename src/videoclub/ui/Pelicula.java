@@ -11,9 +11,11 @@ public class Pelicula {
 	private String calificacion;
 	
 	private Integer idPelicula;
+	//Constructor
 	public Pelicula(){
 		
 	}
+	//Constructor 2
 	public Pelicula(Integer idPelicula, String titulo,String genero, String sinopsis){
 		this.idPelicula = idPelicula;
 		this.genero = genero;

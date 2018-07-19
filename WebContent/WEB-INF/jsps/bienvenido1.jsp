@@ -66,22 +66,7 @@
 						 <a href="index.jsp">Salir</a>
 						 
 						 <center><h1> Listado de Peliculas </h1></center>
-											<style>
-												.demo {
-													border:1px solid #C0C0C0;
-													border-collapse:collapse;
-													padding:5px;
-												}
-												.demo th {
-													border:1px solid #C0C0C0;
-													padding:5px;
-													background:#F0F0F0;
-												}
-												.demo td {
-													border:1px solid #C0C0C0;
-													padding:5px;
-												}
-											</style>
+											
 											<table class="demo">
 												<thead>
 												<tr>
@@ -113,18 +98,17 @@
 						<input style="visibility:hidden" type="text" name="txtNombre" value=<%=request.getAttribute("r_nombre") %> />
 						<br></br>
 						<br></br>
-						<input type="submit" id=btnReservar name="btnEnviar" value=reservar disabled />
+						<input type="submit" class="btn btn-success" name="btnReserva" onclick="form.action='ReservaServlet';" value="Reservar" />
 						 <br></br>
 						 </form>
 				
 				<!-- FIN CODIGO -->
 				
-				<! --/Carousel -->
 		 	</div>
 		 	
 		 	
-	 	</div><! --/row -->
-	 </div><! --/container -->
+	 	</div>
+	 </div>
 
 	<!-- *****************************************************************************************************************
 	 FOOTER
@@ -137,9 +121,9 @@
 		 			
 		 		</div>
 		 	
-		 	</div><! --/row -->
-	 	</div><! --/container -->
-	 </div><! --/footerwrap -->
+		 	</div>
+	 	</div>
+	 </div>
 	 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -154,6 +138,22 @@
   	<script src="assets/js/custom.js"></script>
 
     <script>
+    <style>
+	.demo {
+		border:1px solid #C0C0C0;
+		border-collapse:collapse;
+		padding:5px;
+	}
+	.demo th {
+		border:1px solid #C0C0C0;
+		padding:5px;
+		background:#F0F0F0;
+	}
+	.demo td {
+		border:1px solid #C0C0C0;
+		padding:5px;
+	}
+</style>
 // Portfolio
 (function($) {
 	"use strict";

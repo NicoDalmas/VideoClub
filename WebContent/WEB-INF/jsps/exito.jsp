@@ -21,7 +21,6 @@
 
    
   </head>
-</head>
 <body>
 
 <!-- Navigation -->
@@ -41,8 +40,7 @@
 
 
 <form action="LoginServlet" name=formulario method="POST">
-<input style="visibility:hidden" type="text" name="txtNombre" value=<%=request.getParameter("txtNombre")%>  />
-<input style="visibility:hidden" type="text" name="txtIdUsuario" value=<%=request.getParameter("txtIdUsuario")%>  />
+
 <input class="btn btn-success" type="submit" name="btnEnviar" value=volver />
 
 </form>

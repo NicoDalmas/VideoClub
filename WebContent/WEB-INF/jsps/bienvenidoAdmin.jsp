@@ -55,7 +55,7 @@
 				<div class="form-group"> 
 					<form action="LoginServlet" name=formulario method="POST">
 						<div class="row">
-							<div align=center class="col-sm-4"><input class="btn btn-success" type="submit" name="btnEnviar" value=ModificarDatos /></div>
+							<div align=center class="col-sm-4"><input class="btn btn-success" type="submit" name="btnEnviar" value="Modificar Datos" onclick="form.action='ModificarDatosServlet';" /></div>
 							<div align=center class="col-sm-4"><input class="btn btn-info" type="submit" name="btnEnviar" value=VerReservas /></div>
 							<div align=center class="col-sm-4"></div>
 						</div>	
@@ -97,15 +97,24 @@
 							  			<p class="card-text"><%=peliculas.get(i).getSinopsis()%></p>
 				            			</div>
 				            	</div>
+				            			
 				           </div>
+				           
 				        </div>
-			       </div>	<%}%>	 	  
+				        
+			       </div>	
+			     	    <%}%>
 			   </div>
-		 </div>
+			   
+			    </div>
+		
+		 
 	</form>	
+	</div>
 			
 		
 	<!-- Page Content -->
+	<div class="container">
 	<ul class="pagination justify-content-center">
         <li class="page-item">
           <a class="page-link" href="#" aria-label="Previous">
@@ -129,14 +138,18 @@
           </a>
         </li>
      	</ul>
-						
+     </div>
+					
 <!-- FIN CODIGO -->
     
 <!-- Footer -->
-<footer class="py-5 bg-dark">
-   <div class="container">
+
+<footer class="py-5 bg-dark" style="width:100%">
+   
      <p class="m-0 text-center text-white">Alumno: Nicolás Dalmás &copy;  2018</p>
-   </div>
+   
 </footer>
-</body>
+
+</body>	
+
 </html>

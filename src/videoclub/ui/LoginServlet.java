@@ -28,7 +28,7 @@ public class LoginServlet extends HttpServlet {
 		try {
 			Connection con = null;
 			try {
-				con = ConnectionServlet.getConnection();
+				con = DBConnection.getConnection();
 				
 				String boton = request.getParameter("btnEnviar");
 				/* IF VOLVER */

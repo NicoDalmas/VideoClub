@@ -37,9 +37,9 @@
       <!-- Page Heading -->
       <h1 class="my-4">Error
         <small> llegó al límite de reservas pendientes.</small>
+        <input type="text" name="txtIdUsuario" value=/>
       </h1>
-
-
+<%=request.getAttribute("test") %> 
 <form action="LoginServlet" name=formulario method="POST">
 <input style="visibility:hidden" type="text" name="txtNombre" value=<%=request.getParameter("txtNombre")%>  />
 <input class="btn btn-basic" type="submit" name="btnEnviar" value=volver />
