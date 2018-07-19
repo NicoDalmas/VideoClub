@@ -55,6 +55,17 @@
 
   <servlet>
     <description></description>
+    <display-name>CerrarReservaServlet</display-name>
+    <servlet-name>CerrarReservaServlet</servlet-name>
+    <servlet-class>videoclub.ui.CerrarReservaServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CerrarReservaServlet</servlet-name>
+    <url-pattern>/CerrarReservaServlet</url-pattern>
+  </servlet-mapping> 
+  
+  <servlet>
+    <description></description>
     <display-name>NvoUsuServlet</display-name>
     <servlet-name>NvoUsuServlet</servlet-name>
     <servlet-class>videoclub.ui.NvoUsuServlet</servlet-class>

@@ -40,7 +40,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="bienvenidoAdmin.jsp">Volver</a>
+              <a class="nav-link" href="/WEB-INF/jsps/bienvenidoAdmin.jsp">Volver</a>
             </li>
             <li class="nav-item">
              
@@ -67,7 +67,7 @@
 				 <div class="p-3 mb-2 bg-success text-white">
 						 <h1 class="my-4">Reservas</h1>
 				</div>		 
-								 <form action="LoginServlet" name=formulario method="POST">
+								 <form action="CerrarReservaServlet" name=formulario method="POST">
 								 
 								 <center><h1><small></>Listado de Reservas</h1></small></center>
 											<div class="table-responsive">
@@ -103,7 +103,7 @@
 								 <br></br>
 								 <input style="visibility:hidden" type="text" name="txtNombre" value=<%=request.getParameter("txtNombre")%>  />
 								 <center><input class="btn btn-success" type="submit" id="btnCerrarRes" name="btnEnviar" value=CerrarReservas disabled/></center>
-								 <center><input class="btn" type="submit" name="btnEnviar" value=volver /><center>
+								 <center><input class="btn" type="submit" name="btnEnviar" value=volver onclick="form.action='LoginServlet';" /><center>
 								 </form>
 								 <br></br>
 								 <hr>

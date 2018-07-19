@@ -21,7 +21,13 @@ public class LoginServlet extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
 
-
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+	  throws ServletException, java.io.IOException{
+		//RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsps/bienvenidoAdmin.jsp");
+		//rd.forward(request, response);
+		response.sendRedirect("http://localhost:8084/VideoClub/bienvenidoAdmin.jsp");
+	}
+	
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws IOException, ServletException {
 
@@ -381,7 +387,7 @@ public class LoginServlet extends HttpServlet {
 					// finif valida que haya reservado una pelicula
 				}// FIN IF RESERVAR
 				// IF CERRAR RESERVAS
-				*/else if (boton.equals("CerrarReservas")) {
+				*//*else if (boton.equals("CerrarReservas")) {
 
 					Calendar calendario = new GregorianCalendar();
 
@@ -411,7 +417,7 @@ public class LoginServlet extends HttpServlet {
 							.getRequestDispatcher("/WEB-INF/jsps/exito.jsp");
 							rd.forward(request, response);
 						}
-				}// FIN IF CERRAR RESERVAS
+				}*/// FIN IF CERRAR RESERVAS
 				else {
 					RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
 					rd.forward(request, response);
@@ -423,7 +429,7 @@ public class LoginServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 	}
-
+	
 	private void getRequestDispatcher(String string) {
 		// TODO Auto-generated method stub
 		
