@@ -63,6 +63,28 @@
     <servlet-name>CerrarReservaServlet</servlet-name>
     <url-pattern>/CerrarReservaServlet</url-pattern>
   </servlet-mapping> 
+
+  <servlet>
+    <description></description>
+    <display-name>VolverServlet</display-name>
+    <servlet-name>VolverServlet</servlet-name>
+    <servlet-class>videoclub.ui.VolverServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>VolverServlet</servlet-name>
+    <url-pattern>/VolverServlet</url-pattern>
+  </servlet-mapping>   
+  
+  <servlet>
+    <description></description>
+    <display-name>VerReservasServlet</display-name>
+    <servlet-name>VerReservasServlet</servlet-name>
+    <servlet-class>videoclub.ui.VerReservasServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>VerReservasServlet</servlet-name>
+    <url-pattern>/VerReservasServlet</url-pattern>
+  </servlet-mapping> 
   
   <servlet>
     <description></description>

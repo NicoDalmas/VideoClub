@@ -90,7 +90,7 @@
                 
                 <input class="btn btn-success" type="submit" name="btnEnviar" value=GuardarCambios id="GuardarCambios"  />
                 
-                <input type="submit" class="btn btn-default" name="btnEnviar" onclick="form.action='LoginServlet';"value=volver />
+                <input type="submit" class="btn btn-default" name="btnEnviar" onclick="form.action='VolverServlet';"value=volver />
                 
               
 

@@ -32,7 +32,7 @@
             	<span class="sr-only">(current)</span> </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.jsp">Volver</a>
+              <a class="nav-link" href="index.jsp">Salir</a>
             </li>
             <li class="nav-item">
             </li>
@@ -46,25 +46,20 @@
 	
  <!-- Page Content -->
     <div class="container">
-		<div class="alert alert-success" role="alert">
+		<div class="alert alert-success" role="alert" style="margin-top: 20px;">
 			<p> Bienvenido administrador: <%=request.getAttribute("r_nombre") %> </p>
 		</div>
-		<div class="container"> 
 			<h1>Panel de Administración</h1>
-			<div class="jumbotron">
 				<div class="form-group"> 
 					<form action="LoginServlet" name=formulario method="POST">
 						<div class="row">
-							<div align=center class="col-sm-4"><input class="btn btn-success" type="submit" name="btnEnviar" value="Modificar Datos" onclick="form.action='ModificarDatosServlet';" /></div>
-							<div align=center class="col-sm-4"><input class="btn btn-info" type="submit" name="btnEnviar" value=VerReservas /></div>
-							<div align=center class="col-sm-4"></div>
+							<div class="col-sm-2"><input class="btn btn-success" type="submit" name="btnEnviar" value="Modificar Datos" onclick="form.action='ModificarDatosServlet';" /></div>
+							<div class="col-sm-2"><input class="btn btn-info" type="submit" name="btnEnviar" onclick="form.action='VerReservasServlet';" value="Ver Reservas" /></div>
 						</div>	
 						<input style="visibility:hidden" type="text" name="txtIdUsuario" value=<%=request.getAttribute("r_id") %> />
 						<input style="visibility:hidden" type="text" name="txtNombre" value=<%=request.getParameter("txtNombre")%>  />
 					</form>	 
-				</div>
-			</div>		
-		</div>  
+				</div>	
 		<h1 class="my-4">Catálogo</h1>
 			<form action="LoginServlet" name=formulario method="POST">
 				<%
@@ -139,11 +134,10 @@
         </li>
      	</ul>
      </div>
-					
+</div>		
 <!-- FIN CODIGO -->
     
 <!-- Footer -->
-
 <footer class="py-5 bg-dark" style="width:100%">
    
      <p class="m-0 text-center text-white">Alumno: Nicolás Dalmás &copy;  2018</p>

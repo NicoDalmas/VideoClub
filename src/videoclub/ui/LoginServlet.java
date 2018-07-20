@@ -38,7 +38,7 @@ public class LoginServlet extends HttpServlet {
 				
 				String boton = request.getParameter("btnEnviar");
 				/* IF VOLVER */
-				if (boton.equals("volver")) {
+				/*if (boton.equals("volver")) {
 					// fin carga driver
 					
 					String nombre = request.getParameter("txtNombre");
@@ -72,7 +72,7 @@ public class LoginServlet extends HttpServlet {
 						request.setAttribute("r_id", rs.getString("id"));
 						rd.forward(request, response);
 					} 
-				}
+				}*/
 				/* FIN IF VOLVER */
 				
 				/* IF LOGIN */
@@ -187,7 +187,7 @@ public class LoginServlet extends HttpServlet {
 				}
 				/* FIN IF INVITADO */
 				/* IF VER RESERVAS */
-				if (boton.equals("VerReservas")) {
+				/*if (boton.equals("VerReservas")) {
 
 					Statement st2 = con.createStatement();
 					
@@ -207,10 +207,10 @@ public class LoginServlet extends HttpServlet {
 					request.setAttribute("reservas", reservas);
 					RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsps/reservas.jsp");
 					rd.forward(request, response);
-				}
+				}*/
 				/* FIN IF VER RESERVAS */
 				/* IF NUEVO USUARIO */
-				else if (boton.equals("NuevoUsuario")) {
+				if (boton.equals("NuevoUsuario")) {
 					// fin carga driver
 					// crear coneccion
 					// fin coneccion
@@ -301,29 +301,29 @@ public class LoginServlet extends HttpServlet {
 
 					if(request.getParameter("txtNombre") != "" && request.getParameter("txtPassword") != "" && request.getParameter("txtPassword2") != "" && request.getParameter("txtNombreReal") != "" && request.getParameter("txtTelefono") != "" && request.getParameter("txtDireccion") != ""   )
 					{
-					RequestDispatcher rd;
-					if(request.getParameter("txtPassword").equals(request.getParameter("txtPassword2")))
-					{
-					Statement st = con.createStatement();
-
-					int ra = st.executeUpdate("UPDATE Usuarios set Nombre='"+ request.getParameter("txtNombreReal") +"', Clave='"+ request.getParameter("txtPassword") +"', Direccion='" + request.getParameter("txtDireccion") +"', Telefono='"+ request.getParameter("txtTelefono") +"' WHERE Login ='"+ request.getParameter("txtNombre") + "'");
-
-					rd = request.getRequestDispatcher("/WEB-INF/jsps/exito.jsp");
-					}
-					else
-					{ 
-					request.setAttribute("usuario", u);
-					request.setAttribute("mensaje","Las claves no son iguales");
-					rd = request.getRequestDispatcher("/WEB-INF/jsps/modificarUsuario.jsp"); 
-					}
+						RequestDispatcher rd;
+						if(request.getParameter("txtPassword").equals(request.getParameter("txtPassword2")))
+						{
+							Statement st = con.createStatement();
+	
+							int ra = st.executeUpdate("UPDATE Usuarios set Nombre='"+ request.getParameter("txtNombreReal") +"', Clave='"+ request.getParameter("txtPassword") +"', Direccion='" + request.getParameter("txtDireccion") +"', Telefono='"+ request.getParameter("txtTelefono") +"' WHERE Login ='"+ request.getParameter("txtNombre") + "'");
+		
+							rd = request.getRequestDispatcher("/WEB-INF/jsps/exito.jsp");
+						}
+						else
+						{ 
+							request.setAttribute("usuario", u);
+							request.setAttribute("mensaje","Las claves no son iguales");
+							rd = request.getRequestDispatcher("/WEB-INF/jsps/modificarUsuario.jsp"); 
+						}
 					rd.forward(request, response);
 					}
 					else
 					{
-					request.setAttribute("usuario", u);
-					request.setAttribute("mensaje","Todos los campos son obligatorios");
-					RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsps/modificarUsuario.jsp");
-					rd.forward(request, response); 
+						request.setAttribute("usuario", u);
+						request.setAttribute("mensaje","Todos los campos son obligatorios");
+						RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsps/modificarUsuario.jsp");
+						rd.forward(request, response); 
 					}
 
 					}

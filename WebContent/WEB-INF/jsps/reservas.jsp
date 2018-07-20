@@ -40,7 +40,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/WEB-INF/jsps/bienvenidoAdmin.jsp">Volver</a>
+              <a class="nav-link" href="index.jsp">Salir</a>
             </li>
             <li class="nav-item">
              

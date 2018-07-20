@@ -39,10 +39,11 @@
       </h1>
 
 
-<form action="LoginServlet" name=formulario method="POST">
+<form action="VolverServlet" name=formulario method="POST">
 
-<input class="btn btn-success" type="submit" name="btnEnviar" value=volver />
-
+<input class="btn btn-success" type="submit" name="btnEnviar" value=Volver />
+<input style="visibility:hidden" type="text" name="txtIdUsuario" value=<%=request.getAttribute("r_id") %> />
+<input style="visibility:hidden" type="text" name="txtNombre" value=<%=request.getParameter("txtNombre")%>  />
 </form>
 </body>
 </html>
