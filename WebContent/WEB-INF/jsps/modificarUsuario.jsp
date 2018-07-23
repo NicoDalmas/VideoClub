@@ -48,7 +48,7 @@
               <h4 class="card-title">
                 <div class="p-3 mb-2 bg-success text-white">Datos</div>
               </h4>
-              <p class="card-text"><form action="LoginServlet" name=formulario method="POST" ">
+              <p class="card-text"><form action="GuardarCambiosServlet" name=formulario method="POST" ">
                 <div class="form-group">
                   <%
                 if (request.getAttribute("usuario") != null) {

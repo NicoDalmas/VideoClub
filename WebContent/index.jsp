@@ -56,7 +56,7 @@
             <br></br>
             <input class="btn btn-success" type="submit" name="btnEnviar" value=Enviar />
             <a class="btn btn-info" href="nuevoUsuario.jsp">Registrarse</a>
-            <input class="btn btn-basic" type="submit" name="btnEnviar" value=Invitado />
+            <input class="btn btn-basic" type="submit" name="btnEnviar" onclick="form.action='InvitadoServlet';" value=Invitado />
             
             </form>
             <p style="color:red"> 
