@@ -14,6 +14,7 @@
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/2-col-portfolio.css" rel="stylesheet">
     <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/checkbox.css"  rel="stylesheet">
 
 </head>
 
@@ -49,7 +50,7 @@
 		<div class="alert alert-success" role="alert" style="margin-top: 20px;">
 			<p> Bienvenido administrador: <%=request.getAttribute("r_nombre") %> </p>
 		</div>
-			<h1>Panel de Administración</h1>
+			<h2>Panel de Administración</h2>
 				<div class="form-group"> 
 					<form action="LoginServlet" name=formulario method="POST">
 						<div class="row">

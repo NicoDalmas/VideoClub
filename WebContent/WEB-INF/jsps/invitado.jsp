@@ -14,7 +14,8 @@
     <!-- Bootstrap core CSS -->
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> 
     <link href="assets/css/2-col-portfolio.css" rel="stylesheet"> 
-    <link href="assets/css/font-awesome.min.css" rel="stylesheet">  
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/checkbox.css"  rel="stylesheet">
 
  </head>
 
@@ -48,7 +49,7 @@
 		<div class="alert alert-success" role="alert">
   			<p> Bienvenido Invitado </p>
 		</div>
-		<h1 class="my-4">Catálogo</h1>
+
 			<form action="LoginServlet" name=formulario method="POST">
 				<%
 					Integer contador=0;
