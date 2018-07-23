@@ -103,7 +103,7 @@
 								 <br></br>
 								 <input style="visibility:hidden" type="text" name="txtNombre" value=<%=request.getParameter("txtNombre")%>  />
 								 <center><input class="btn btn-success" type="submit" id="btnCerrarRes" name="btnEnviar" value=CerrarReservas disabled/></center>
-								 <center><input class="btn" type="submit" name="btnEnviar" value=volver onclick="form.action='LoginServlet';" /><center>
+								 <center><input class="btn" type="submit" name="btnEnviar" value=volver onclick="form.action='VolverServlet';" /><center>
 								 </form>
 								 <br></br>
 								 <hr>

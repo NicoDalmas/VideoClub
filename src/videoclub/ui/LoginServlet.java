@@ -128,7 +128,7 @@ public class LoginServlet extends HttpServlet {
 				}
 				/* FIN IF LOGIN */
 				/* IF VOLVER */
-				if (boton.equals("volver")) {
+				/*if (boton.equals("volver")) {
 					// fin carga driver
 					// crear coneccion
 
@@ -167,7 +167,7 @@ public class LoginServlet extends HttpServlet {
 						request.setAttribute("mensaje", "error de clave o usuario");
 						rd.forward(request, response);
 					}
-				}
+				}*/
 				/* FIN IF VOLVER */
 				/* IF INVITADO */
 				if (boton.equals("Invitado")) {
